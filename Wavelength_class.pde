@@ -34,11 +34,6 @@ class Wavelength {
    
    void display() {
       for(int i=0; i < waves.size(); i++){
-        
-        if(this.waves.get(i).height > displayHeight || this.waves.get(i).width > displayWidth){
-          this.waves.get(i).reset();
-        }
-          
         this.waves.get(i).move();
         this.waves.get(i).display(); 
       }

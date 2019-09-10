@@ -43,8 +43,10 @@ class Wave {
       // try using scale
       this.width+= iteration * 2;
       this.height+= iteration;
+    } else {
+      sample.play();
+      this.reset();
     }
-    // else destroy
   }
 
   void display() {
