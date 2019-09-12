@@ -30,8 +30,6 @@ class Wave {
   }
   
   void reset(){
-      // Play Sound  
-    
       this.height = initialHeight;
       this.width = initialWidth;
       this.iteration = 0;
@@ -44,7 +42,7 @@ class Wave {
       this.width+= iteration * 2;
       this.height+= iteration;
     } else {
-      sample.play();
+      waveAudioSample.play();
       this.reset();
     }
   }

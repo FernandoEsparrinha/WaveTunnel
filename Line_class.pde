@@ -1,5 +1,3 @@
-
-
 class Line {
   
  PVector location;
@@ -38,8 +36,6 @@ class Line {
   }
   
   void reset(){
-      // Play Sound  
-    
       this.x = initialX;
       this.y = initialY;
       this.iteration = 0;
@@ -54,9 +50,9 @@ class Line {
       this.y+= iteration;
       location.add(velocity);
     } else {
+       lineAudioSample.play();
        this.reset(); 
     }
-    // else destroy
   }
 
   void display() {

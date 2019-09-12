@@ -1,5 +1,5 @@
 class Wavelength {
-   int numberOfInitialWaves = 5;
+   int numberOfInitialWaves = 1;
    ArrayList<Wave> waves;
    
    Wavelength(){

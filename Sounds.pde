@@ -1,6 +1,8 @@
-AudioSample sample;
+AudioSample waveAudioSample;
+AudioSample lineAudioSample;
 
 void setupSounds(){
+  
   // Create an array and manually write a single sine wave oscillation into it.
   int resolution = 1000;
   float[] sinewave = new float[resolution];
@@ -9,8 +11,10 @@ void setupSounds(){
   }
 
   // Create the audiosample based on the data, set framerate to play 200 oscillations/second
-  sample = new AudioSample(this, sinewave, 2000 * resolution);
+  waveAudioSample = new AudioSample(this, sinewave, 2000 * resolution);
+  lineAudioSample = new AudioSample(this, sinewave, 100 * resolution);
 
   // Play the sample in a loop (but don't make it too loud)
-  sample.amp(0.5);
+  waveAudioSample.amp(0.5);
+  lineAudioSample.amp(0.5);
 }
