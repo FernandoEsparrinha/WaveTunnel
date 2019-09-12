@@ -1,17 +1,17 @@
 class Wavelength {
-   int numberOfInitialWaves = 1;
+   int numberOfInitialWaves = 5;
    ArrayList<Wave> waves;
    
    Wavelength(){
      waves = new ArrayList<Wave>();
      
      for(int i=0; i < numberOfInitialWaves; i++){
-         waves.add(new Wave(i+1));
+         waves.add(new Wave(i+40));
      }
    }
    
    void increaseWaves(){
-      waves.add(new Wave(1));
+      waves.add(new Wave(40));
    }
    
    void decreaseWaves(){
