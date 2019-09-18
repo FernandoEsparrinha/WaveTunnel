@@ -14,6 +14,9 @@ function setup() {
 
 function draw() {
   background(backgroundColor);
+
+  // circle(windowWidth/2, windowHeight/2, 5);
+
   rectangleWave.display();
   // lineWave.display();
   
