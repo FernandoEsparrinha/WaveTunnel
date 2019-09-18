@@ -13,7 +13,11 @@ function setup() {
 }
 
 function draw() {
-  background(backgroundColor);
+  if(isMobileDevice()){
+    background(255);
+  } else {
+    background(backgroundColor);
+  }
 
   // circle(windowWidth/2, windowHeight/2, 5);
 
