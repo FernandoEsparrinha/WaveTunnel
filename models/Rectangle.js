@@ -41,6 +41,11 @@ class Rectangle {
     display() {
         stroke(color(random(255), random(255), random(255)));
         noFill();
-        rect(windowWidth/2 - (this.width/2), windowHeight/2 - (this.height/2), this.width, this.height);
+        rect(   
+            windowWidth/2 - (this.width/2), 
+            windowHeight/2 - (this.height/2), 
+            this.width, 
+            this.height
+        );
     }
 }
