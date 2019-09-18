@@ -13,13 +13,22 @@ function setup() {
 }
 
 function draw() {
-  if(isMobileDevice()){
-    background(255);
-  } else {
-    background(backgroundColor);
-  }
+  background(backgroundColor);
 
   // circle(windowWidth/2, windowHeight/2, 5);
+
+  if(isMobileDevice()){
+    let chance = Math.random()*1000;
+    if (chance < 400) {
+      rectangleWave.increaseWaves();
+    } else if (chance < 500){
+      rectangleWave.decreaseWaves();
+    } else if (chance < 600){
+      rectangleWave.decreaseSpeed();
+    } else {
+      rectangleWave.increaseSpeed();
+    }
+  }
 
   rectangleWave.display();
   // lineWave.display();
