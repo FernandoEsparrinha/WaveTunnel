@@ -2,6 +2,14 @@
 let rectangleWave;
 
 function setup() {
+  console.log("------------------------");
+  console.log("/ Welcome to WaveTunnel \\");
+  console.log("↑ adds rectangles");
+  console.log("⬇️ removes rectangles");
+  console.log("→ increases speed");
+  console.log("← reduces speed");
+  console.log("------------------------");
+
   console.log("Setting up wave tunnel..");
   console.log("Creating canvas");
   createCanvas(windowWidth, windowHeight);
