@@ -27,7 +27,9 @@ class Rectangle {
     }
 
     move() {
-        if (this.height < windowHeight && this.width < windowWidth) {
+        if (this.height < -windowHeight && this.width < -windowWidth) {
+            this.reset();
+       } else if (this.height < windowHeight && this.width < windowWidth) {
             this.iteration += this.speed/10;
             // try using scale
             this.width+= this.iteration * (windowWidth/windowHeight);
