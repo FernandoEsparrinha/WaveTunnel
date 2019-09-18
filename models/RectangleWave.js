@@ -12,7 +12,7 @@ class RectangleWave {
     }
 
     increaseWaves(){
-      this.waves.push(new Rectangle(40));
+      this.waves.push(new Rectangle(this.initialSpeed));
       console.log("Increased size of rectangle wave to "+ this.waves.length);
     }
     
