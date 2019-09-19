@@ -8,6 +8,9 @@ function setup() {
   console.log("⬇️ removes rectangles");
   console.log("→ increases speed");
   console.log("← reduces speed");
+  console.log("1 White mode");
+  console.log("2 Rainbow mode");
+  console.log("3 RGB mode");
   console.log("------------------------");
 
   console.log("Setting up wave tunnel..");
