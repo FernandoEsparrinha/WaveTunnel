@@ -40,8 +40,27 @@ class Rectangle {
         }
     }
 
+    paintStroke(){
+        if(this.width < windowWidth/4){
+            stroke(color(this.width, 0, 0))
+        } else if (this.width < windowWidth/3){
+            stroke(color(0, this.width, 0))
+        } else if (this.width < windowWidth/2){
+            stroke(color(0, 0, this.width))
+        } else {
+            stroke(color(this.width, this.width, this.width))
+        }
+    }
+
     display() {
-        stroke(color(random(255), random(255), random(255)));
+        if(colorMode == 0){
+            stroke(color(this.width,this.width,this.width));
+        } else if(colorMode == 1){
+            stroke(color(random(this.width),random(this.width),random(this.width)));
+        } else if(colorMode == 2){
+            this.paintStroke();
+        }
+
         noFill();
         rect(   
             windowWidth/2 - (this.width/2), 
