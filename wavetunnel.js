@@ -26,11 +26,15 @@ function draw() {
   // circle(windowWidth/2, windowHeight/2, 5);
 
   if(isMobileDevice()){
-    let chance = Math.random()*1000;
+    let chance = random()*1000;
     if (chance < 300) {
       rectangleWave.increaseWaves();
     } else if (chance < 500){
       rectangleWave.decreaseWaves();
+      if(random(10)<1){
+        colorMode = floor(random(3));
+        console.log(colorMode)
+      }
     } else if (chance < 750){
       rectangleWave.decreaseSpeed();
     } else {
