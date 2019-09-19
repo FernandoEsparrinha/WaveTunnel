@@ -1,13 +1,13 @@
 class RectangleWave {
     constructor() {
-        this.initialWaves = 1;
+        this.initialWaves = 5;
         this.initialSpeed = 1;
         this.waves = [];
         
         console.log("Creating Rectangle Wave");
         console.log(this);
         for (let i = 0; i < this.initialWaves; i++) {
-            this.waves.push(new Rectangle(i+this.initialSpeed));
+            this.waves.push(new Rectangle((i/4)+this.initialSpeed));
         }
     }
 
