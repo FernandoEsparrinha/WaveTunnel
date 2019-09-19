@@ -12,6 +12,14 @@ function keyPressed() {
       if(keyCode === RIGHT_ARROW){
         rectangleWave.increaseSpeed();
       }
-    
+      if(keyCode === 49){
+        colorMode = 0;
+      }
+      if(keyCode === 50){
+        colorMode = 1;
+      }
+      if(keyCode === 51){
+        colorMode = 2;
+      }
   }
   
