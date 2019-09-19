@@ -27,11 +27,11 @@ function draw() {
 
   if(isMobileDevice()){
     let chance = Math.random()*1000;
-    if (chance < 400) {
+    if (chance < 300) {
       rectangleWave.increaseWaves();
     } else if (chance < 500){
       rectangleWave.decreaseWaves();
-    } else if (chance < 600){
+    } else if (chance < 750){
       rectangleWave.decreaseSpeed();
     } else {
       rectangleWave.increaseSpeed();
