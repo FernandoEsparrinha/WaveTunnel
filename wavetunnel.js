@@ -25,7 +25,6 @@ function setup() {
 
 function draw() {
   background(backgroundColor);
-
   // circle(windowWidth/2, windowHeight/2, 5);
 
   if(isMobileDevice()){
@@ -43,6 +42,11 @@ function draw() {
     } else {
       rectangleWave.increaseSpeed();
     }
+  } else {
+    textSize(16);
+    stroke(255,255,255);
+    fill(255);
+    text('fernandopinto.github.io/WaveTunnel', windowWidth - 270, windowHeight - 10);
   }
 
   rectangleWave.display();
