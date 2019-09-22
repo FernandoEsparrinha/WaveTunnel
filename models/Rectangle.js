@@ -61,10 +61,11 @@ class Rectangle {
             this.paintStroke();
         }
 
+        rectMode(CENTER);
         noFill();
         rect(   
-            windowWidth/2 - (this.width/2), 
-            windowHeight/2 - (this.height/2), 
+            windowWidth/2, 
+            windowHeight/2, 
             this.width, 
             this.height
         );
