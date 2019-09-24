@@ -47,6 +47,9 @@ function draw() {
     stroke(255,255,255);
     fill(255);
     text('fernandopinto.github.io/WaveTunnel', windowWidth - 270, windowHeight - 10);
+
+    drawLine(0, windowHeight/2, windowWidth, windowHeight/2);
+    circle(mouseX,mouseY,5);
   }
 
   rectangleWave.display();
