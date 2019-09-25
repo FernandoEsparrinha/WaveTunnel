@@ -6,12 +6,14 @@ function mouseWheel(event) {
     }
   }
 
+  /* 
   function mouseMoved(event) {
     // 0 - 600
     //console.log(event.clientX);
     // 0 - 1000
     //console.log(event.clientY);
     //console.log(event.ctrlKey);
+
     if (event.clientX < 100) {
       colorMode = 2;
     } else if (event.clientX < 200) {
@@ -37,5 +39,5 @@ function mouseWheel(event) {
             rectangleWave.increaseWaves();
         }
     }
-    
   }
+ */
