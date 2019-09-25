@@ -57,10 +57,10 @@ class Rectangle {
             stroke(color(this.width,this.width,this.width));
         } else if(colorMode == 1){
             stroke(color(random(this.width),random(this.width),random(this.width)));
-        } else if(colorMode == 2){
+        } else {
             this.paintStroke();
         }
-
+        strokeWeight(1);
         rectMode(CENTER);
         noFill();
         rect(   
