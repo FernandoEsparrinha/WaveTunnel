@@ -1,3 +1,5 @@
+p5.disableFriendlyErrors = true;
+
 // let lineWave;
 let rectangleWave;
 
@@ -26,6 +28,16 @@ function setup() {
 function draw() {
   background(backgroundColor);
   // circle(windowWidth/2, windowHeight/2, 5);
+
+  if(debugMode){
+    let fps = frameRate();
+    fill(255);
+    stroke(0);
+    text("FPS: " + fps.toFixed(2), 10, height - 10);
+    text("Waves: "+ rectangleWave.waves.length, 10, height - 30);
+    text("1st Wave speed: "+ rectangleWave.waves[0].speed, 10, height - 50);
+    text("Color mode: "+ colorMode, 10, height - 70);
+  }
 
   if(isMobileDevice()){
     let chance = random()*1000;
