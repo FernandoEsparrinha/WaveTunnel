@@ -20,14 +20,15 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   console.log("Width: "+ windowWidth);
   console.log("Height: "+ windowHeight);
-  
+
+  ps = new ParticleSystem(createVector(mouseX, mouseY));
+
   rectangleWave = new RectangleWave();
   // lineWave = new LineWave();
 }
 
 function draw() {
   background(backgroundColor);
-  // circle(windowWidth/2, windowHeight/2, 5);
 
   if(debugMode){
     let fps = frameRate();
@@ -63,8 +64,21 @@ function draw() {
     drawLine(0, windowHeight/2, windowWidth, windowHeight/2);
     circle(mouseX,mouseY,5);
   }
-
+  
+  // --------
+  // WAVES
   rectangleWave.display();
+ 
+  //drawLine(windowWidth/2, windowHeight/2 , mouseX,mouseY);
   // lineWave.display();
   
+  // --------
+  // PARTICLE SYSTEM
+  // ps.applyForce(wind);
+  // let wind = createVector(dx, 0);
+   ps.run();
+   ps.updatePosition(mouseX, mouseY);
+   for (let i = 0; i < 2; i++) {
+     ps.addParticle();
+   }
 }
