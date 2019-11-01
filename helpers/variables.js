@@ -1,4 +1,4 @@
-let backgroundColor = 0;
+let backgroundColor = 'black';
 let colorMode = 0;
 
 // Only used debug mode while hosting locally
