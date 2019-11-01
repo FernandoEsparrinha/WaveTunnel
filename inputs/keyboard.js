@@ -1,13 +1,13 @@
 function keyTyped() {
 
   if (keyCode === 49) {
-    colorMode = 0;
+    settings.colorMode = 'white';
   }
   if (keyCode === 50) {
-    colorMode = 1;
+    settings.colorMode = 'random';
   }
   if (keyCode === 51) {
-    colorMode = 2;
+    settings.colorMode = 'colorful';
   }
 
   return false;

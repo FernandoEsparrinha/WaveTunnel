@@ -5,13 +5,14 @@ class Cursor {
   }
 
   display() {
+    stroke(255);
     circle(mouseX, mouseY, 5);
 
-    this.ps.run();
-    this.ps.updatePosition(mouseX, mouseY);
-    for (let i = 0; i < 5; i++) {
-      this.ps.addParticle();
-    }
+    // this.ps.run();
+    // this.ps.updatePosition(mouseX, mouseY);
+    // for (let i = 0; i < 5; i++) {
+    //   this.ps.addParticle();
+    // }
   }
 }
 

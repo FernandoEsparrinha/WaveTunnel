@@ -2,6 +2,7 @@ p5.disableFriendlyErrors = true;
 
 // let lineWave;
 let rectangleWave;
+let gui;
 
 function setup() {
   console.log("------------------------");
@@ -21,21 +22,22 @@ function setup() {
   console.log("Width: " + windowWidth);
   console.log("Height: " + windowHeight);
 
+  setGUI();
+  cursor = new Cursor();
   rectangleWave = new RectangleWave();
   // lineWave = new LineWave();
 }
 
 function draw() {
-  background(backgroundColor);
+  background(settings.backgroundColor);
 
-  if (debugMode) {
+  if (settings.debugMode) {
     let fps = frameRate();
     fill(255);
     stroke(0);
     text("FPS: " + fps.toFixed(2), 10, height - 10);
     text("Waves: " + rectangleWave.waves.length, 10, height - 30);
     text("1st Wave speed: " + rectangleWave.waves[0].speed, 10, height - 50);
-    text("Color mode: " + colorMode, 10, height - 70);
   }
 
   if (isMobileDevice()) {
@@ -45,8 +47,7 @@ function draw() {
     } else if (chance < 500) {
       rectangleWave.decreaseWaves();
       if (random(10) < 1) {
-        colorMode = floor(random(3));
-        console.log(colorMode)
+        settings.colorMode = ["white", "random", "two-tone"][floor(random(3))];
       }
     } else if (chance < 750) {
       rectangleWave.decreaseSpeed();
@@ -63,5 +64,6 @@ function draw() {
 
   // WAVES
   rectangleWave.display();
+  cursor.display();
   controlWave();
 }

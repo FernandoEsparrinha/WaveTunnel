@@ -54,11 +54,11 @@ class Rectangle {
     }
 
     display() {
-        if (colorMode == 0) {
+        if (settings.colorMode == "white") {
             stroke(color(Math.abs(this.width), Math.abs(this.width), Math.abs(this.width)));
-        } else if (colorMode == 1) {
+        } else if (settings.colorMode == "random") {
             stroke(color(random(this.width), random(this.width), random(this.width)));
-        } else {
+        } else if (settings.colorMode == "two-tone") {
             this.paintStroke();
         }
         strokeWeight(1);
