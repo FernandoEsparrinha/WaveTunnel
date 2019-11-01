@@ -1,36 +1,59 @@
 <!DOCTYPE html>
 <html lang="">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <meta name="apple-mobile-web-app-capable" content="yes" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>WaveTunnel</title>
-    <style> body {padding: 0; margin: 0;} canvas { display: block; } * { cursor: none; }</style>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
 
-    <script src="p5/p5.js"></script>
-    <script src="p5/p5.dom.js"></script>
-    <script src="p5/p5.sound.js"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
 
-    <script src="wavetunnel.js"></script>
-    
-    <script src="inputs/keyboard.js"></script>
-    <script src="inputs/mouse.js"></script>
-    
-    <script src="helpers/functions.js"></script>
-    <script src="helpers/variables.js"></script>
-    
-    <script src="models/Cursor.js"></script>
-    <script src="models/Line.js"></script>
-    <script src="models/Rectangle.js"></script>
-    <script src="models/RectangleWave.js"></script>
-  
-  </head>
-  <body>
-  </body>
+  <title>WaveTunnel</title>
+  <style>
+    html {
+      overflow: hidden;
+      height: 100%;
+    }
+
+    body {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      overflow: auto;
+    }
+
+    canvas {
+      display: block;
+    }
+
+    * {
+      cursor: none;
+    }
+  </style>
+
+  <script src="p5/p5.js"></script>
+  <script src="p5/p5.dom.js"></script>
+  <script src="p5/p5.sound.js"></script>
+
+  <script src="wavetunnel.js"></script>
+
+  <script src="inputs/keyboard.js"></script>
+  <script src="inputs/mouse.js"></script>
+
+  <script src="helpers/functions.js"></script>
+  <script src="helpers/variables.js"></script>
+
+  <script src="models/Cursor.js"></script>
+  <script src="models/Line.js"></script>
+  <script src="models/Rectangle.js"></script>
+  <script src="models/RectangleWave.js"></script>
+
+</head>
+
+<body>
+</body>
+
 </html>
