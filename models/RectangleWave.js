@@ -17,7 +17,7 @@ class RectangleWave {
   }
 
   decreaseWaves() {
-    if (this.waves.length > 0) {
+    if (this.waves.length > 1) {
       this.waves.pop();
       console.log("Decreased size of rectangle wave to " + this.waves.length);
     }
