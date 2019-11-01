@@ -61,9 +61,7 @@ function draw() {
 
   }
 
-
   // WAVES
   rectangleWave.display();
-
 
 }
