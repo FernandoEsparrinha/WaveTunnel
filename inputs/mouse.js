@@ -1,5 +1,5 @@
 function mouseWheel(event) {
-  console.log(event.delta)
+
   if (event.delta < 0) {
     rectangleWave.decreaseSpeed();
   } else {
