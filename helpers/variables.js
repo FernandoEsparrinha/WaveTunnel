@@ -1,4 +1,5 @@
 let backgroundColor = 0;
 let colorMode = 0;
 
-let debugMode = true;
+// Only used debug mode while hosting locally
+let debugMode = location.hostname === "";
