@@ -35,9 +35,10 @@ function draw() {
     let fps = frameRate();
     fill(255);
     stroke(0);
-    text("FPS: " + fps.toFixed(2), 10, height - 10);
-    text("Waves: " + rectangleWave.waves.length, 10, height - 30);
+    text('Version 0.1.0', 10, height - 70);
     text("1st Wave speed: " + rectangleWave.waves[0].speed, 10, height - 50);
+    text("Waves: " + rectangleWave.waves.length, 10, height - 30);
+    text("FPS: " + fps.toFixed(2), 10, height - 10);
   }
 
   if (isMobileDevice()) {
