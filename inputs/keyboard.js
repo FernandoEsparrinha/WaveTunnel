@@ -9,11 +9,14 @@ function keyTyped() {
   if (keyCode === 51) {
     settings.colorMode = 'colorful';
   }
+  if (keyCode === 32) {
+    rectangleWave.reset();
+  }
 
   return false;
 }
 
-function controlWave() {
+function keyboardWaveControl() {
   if (keyIsDown(UP_ARROW)) {
     rectangleWave.increaseWaves();
   }

@@ -44,6 +44,7 @@ class RectangleWave {
 
   display() {
     for (let i = 0; i < this.waves.length; i++) {
+      this.waves[i].refreshSpeed(this.speed);
       this.waves[i].move();
       this.waves[i].display();
     }
