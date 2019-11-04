@@ -1,6 +1,9 @@
+
+
 let settings = {
-    colorMode: ['white', 'random', 'two-tone'],
-    // strokeWeight: 1,
+    colorMode: ['two-tone', 'white', 'random'],
     backgroundColor: [0, 0, 0],
-    debugMode: location.hostname === ""
+    debugMode: location.hostname === "",
+    rotate: false,
 };
+

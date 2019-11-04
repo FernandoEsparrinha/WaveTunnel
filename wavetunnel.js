@@ -1,8 +1,8 @@
 p5.disableFriendlyErrors = true;
-
 // let lineWave;
 let rectangleWave;
 let gui;
+let rotationSpeed = 0;
 
 function setup() {
   console.log("------------------------");
@@ -60,11 +60,18 @@ function draw() {
     stroke(255, 255, 255);
     fill(255);
     text('fernandopinto.github.io/WaveTunnel', windowWidth - 270, windowHeight - 10);
-
   }
 
-  // WAVES
+  push();
+  if (settings.rotate) {
+    translate(windowWidth / 2, windowHeight / 2);
+    rotate(radians(frameCount * rotationSpeed));
+    translate(-(windowWidth / 2), -(windowHeight / 2));
+  }
   rectangleWave.display();
+  pop();
+
+  // WAVES
   cursor.display();
-  controlWave();
+  keyboardWaveControl();
 }
