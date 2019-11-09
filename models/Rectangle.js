@@ -10,6 +10,7 @@ class Rectangle {
         this.iteration = 0;
 
         this.speed = initialSpeed;
+        this.lifespan = 0;
     }
 
     refreshSpeed(speed) {
@@ -23,6 +24,7 @@ class Rectangle {
     }
 
     move() {
+        this.lifespan++;
         if (this.height < -windowHeight && this.width < -windowWidth) {
             this.reset();
         } else if (this.height < windowHeight && this.width < windowWidth) {
@@ -69,7 +71,11 @@ class Rectangle {
         scale(this.iteration);
 
         strokeWeight(0.1);
+        if (settings.rotate) {
+            rotate(this.lifespan / (rotationSpeed / 20));
+        }
         rect(0, 0, windowWidth / 20, windowHeight / 20);
+        // circle(0, 0, 50);
 
         pop();
     }
