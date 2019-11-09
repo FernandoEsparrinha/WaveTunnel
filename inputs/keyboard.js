@@ -24,9 +24,9 @@ function keyboardWaveControl() {
     rectangleWave.decreaseWaves();
   }
   if (keyIsDown(LEFT_ARROW)) {
-    rectangleWave.decreaseSpeed();
+    rectangleWave.speed -= 0.1;
   }
   if (keyIsDown(RIGHT_ARROW)) {
-    rectangleWave.increaseSpeed();
+    rectangleWave.speed += 0.1;
   }
 }
