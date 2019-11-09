@@ -22,7 +22,10 @@ function setup() {
   console.log("Width: " + windowWidth);
   console.log("Height: " + windowHeight);
 
-  setGUI();
+  if (!isMobileDevice()) {
+    setGUI();
+  }
+
   cursor = new Cursor();
   rectangleWave = new RectangleWave();
   // lineWave = new LineWave();
@@ -42,6 +45,7 @@ function draw() {
   }
 
   if (isMobileDevice()) {
+    settings.colorMode = "two-tone";
     let chance = random() * 1000;
     if (chance < 300) {
       rectangleWave.increaseWaves();
@@ -51,9 +55,13 @@ function draw() {
         settings.colorMode = ["white", "random", "two-tone"][floor(random(3))];
       }
     } else if (chance < 750) {
-      rectangleWave.decreaseSpeed();
+      rectangleWave.speed -= 0.1;
     } else {
-      rectangleWave.increaseSpeed();
+      rectangleWave.speed += 0.1;
+      let chance2 = random() * 1000;
+      if (chance2 > 800) {
+        settings.rotate = !settings.rotate;
+      }
     }
   } else {
     textSize(16);
