@@ -40,7 +40,18 @@ WebMidi.enable(function (err) {
 
     input.addListener('noteon', "all",
         function (e) {
-            console.log("Received 'noteon' message (" + e.note.name + e.note.octave + ").");
+            if (settings.debugMode) {
+                console.log("Received 'noteon' message (" + e.note.name + " - " + e.note.octave + ").");
+            }
+            if (e.note.name == "G" && e.note.octave == "2") {
+                rectangleWave.increaseWaves();
+            }
+            if (e.note.name == "D#" && e.note.octave == "2") {
+                rectangleWave.decreaseWaves();
+            }
+            if (e.note.name == "D" && e.note.octave == "2") {
+                settings.rotate = !settings.rotate;
+            }
         }
     );
 
