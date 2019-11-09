@@ -1,5 +1,9 @@
-let backgroundColor = 0;
-let colorMode = 0;
 
-// Only used debug mode while hosting locally
-let debugMode = location.hostname === "";
+
+let settings = {
+    colorMode: ['two-tone', 'white', 'random'],
+    backgroundColor: [0, 0, 0],
+    debugMode: location.hostname === "",
+    rotate: false,
+};
+

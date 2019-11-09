@@ -1,25 +1,32 @@
-function keyPressed() {
-   
-      if(keyCode == UP_ARROW) {
-        rectangleWave.increaseWaves();
-      }
-      if(keyCode == DOWN_ARROW){
-        rectangleWave.decreaseWaves(); 
-      }
-      if(keyCode === LEFT_ARROW){
-        rectangleWave.decreaseSpeed();
-      }
-      if(keyCode === RIGHT_ARROW){
-        rectangleWave.increaseSpeed();
-      }
-      if(keyCode === 49){
-        colorMode = 0;
-      }
-      if(keyCode === 50){
-        colorMode = 1;
-      }
-      if(keyCode === 51){
-        colorMode = 2;
-      }
+function keyTyped() {
+
+  if (keyCode === 49) {
+    settings.colorMode = 'white';
   }
-  
+  if (keyCode === 50) {
+    settings.colorMode = 'random';
+  }
+  if (keyCode === 51) {
+    settings.colorMode = 'colorful';
+  }
+  if (keyCode === 32) {
+    rectangleWave.reset();
+  }
+
+  return false;
+}
+
+function keyboardWaveControl() {
+  if (keyIsDown(UP_ARROW)) {
+    rectangleWave.increaseWaves();
+  }
+  if (keyIsDown(DOWN_ARROW)) {
+    rectangleWave.decreaseWaves();
+  }
+  if (keyIsDown(LEFT_ARROW)) {
+    rectangleWave.speed -= 0.1;
+  }
+  if (keyIsDown(RIGHT_ARROW)) {
+    rectangleWave.speed += 0.1;
+  }
+}

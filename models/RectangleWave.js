@@ -1,13 +1,14 @@
 class RectangleWave {
   constructor() {
-    this.initialWaves = 1;
-    this.initialSpeed = 0.5;
+    this.initialWaves = 5;
+    this.initialSpeed = 0.01;
+    this.speed = this.initialSpeed;
     this.waves = [];
 
     console.log("Creating Rectangle Wave");
     console.log(this);
     for (let i = 0; i < this.initialWaves; i++) {
-      this.waves.push(new Rectangle((i / 4) + this.initialSpeed));
+      this.waves.push(new Rectangle(this.initialSpeed));
     }
   }
 
@@ -17,10 +18,14 @@ class RectangleWave {
   }
 
   decreaseWaves() {
-    if (this.waves.length > 0) {
-      this.waves.pop();
+    if (this.waves.length > 1) {
+      this.waves.shift();
       console.log("Decreased size of rectangle wave to " + this.waves.length);
     }
+  }
+
+  reset() {
+    this.waves = [new Rectangle(this.initialSpeed)]
   }
 
   increaseSpeed() {
@@ -39,6 +44,7 @@ class RectangleWave {
 
   display() {
     for (let i = 0; i < this.waves.length; i++) {
+      this.waves[i].refreshSpeed(this.speed);
       this.waves[i].move();
       this.waves[i].display();
     }
