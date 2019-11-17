@@ -14,9 +14,6 @@ class Rectangle {
 
         this.grayTone = random(255);
 
-        this.x = translateX;
-        this.y = translateY;
-
         this.rotationSpeed = (rotationSpeed / 200);
     }
 
