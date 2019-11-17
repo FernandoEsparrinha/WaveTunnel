@@ -1,7 +1,7 @@
 class RectangleWave {
   constructor() {
     this.initialWaves = 5;
-    this.initialSpeed = 0.01;
+    this.initialSpeed = 0.1;
     this.speed = this.initialSpeed;
     this.waves = [];
 
@@ -12,34 +12,34 @@ class RectangleWave {
     }
   }
 
-  increaseWaves() {
-    this.waves.push(new Rectangle(this.initialSpeed));
-    console.log("Increased size of rectangle wave to " + this.waves.length);
+  addWaves(amount) {
+    for (let i = 0; i < amount; i++) {
+      this.waves.push(new Rectangle(this.initialSpeed));
+    }
   }
 
-  decreaseWaves() {
-    if (this.waves.length > 1) {
-      this.waves.shift();
-      console.log("Decreased size of rectangle wave to " + this.waves.length);
+  removeWaves(amount) {
+    for (let i = 0; i < amount; i++) {
+      if (this.waves.length > 1) {
+        this.waves.shift();
+      }
+    }
+  }
+
+  addSpeed(value) {
+    for (let i = 0; i < this.waves.length; i++) {
+      this.waves[i].addSpeed(value);
+    }
+  }
+
+  takeSpeed(value) {
+    for (let i = 0; i < this.waves.length; i++) {
+      this.waves[i].takeSpeed(value);
     }
   }
 
   reset() {
     this.waves = [new Rectangle(this.initialSpeed)]
-  }
-
-  increaseSpeed() {
-    console.log("Increased speed of rectangle wave");
-    for (let i = 0; i < this.waves.length; i++) {
-      this.waves[i].increaseSpeed();
-    }
-  }
-
-  decreaseSpeed() {
-    console.log("Decreased speed of rectangle wave");
-    for (let i = 0; i < this.waves.length; i++) {
-      this.waves[i].decreaseSpeed();
-    }
   }
 
   display() {
