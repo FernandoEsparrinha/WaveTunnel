@@ -1,8 +1,4 @@
 p5.disableFriendlyErrors = true;
-// let lineWave;
-let rectangleWave;
-let gui;
-let rotationSpeed = 0;
 
 function setup() {
   console.log("------------------------");
@@ -26,15 +22,14 @@ function setup() {
     setGUI();
   }
 
-  cursor = new Cursor();
   rectangleWave = new RectangleWave();
-  // lineWave = new LineWave();
+  cursor = new Cursor();
 }
 
 function draw() {
   background(settings.backgroundColor);
 
-  if (settings.debugMode) {
+  if (settings.debugMode && !isMobileDevice()) {
     let fps = frameRate();
     fill(255);
     stroke(0);
@@ -45,24 +40,7 @@ function draw() {
   }
 
   if (isMobileDevice()) {
-    settings.colorMode = "two-tone";
-    let chance = random() * 1000;
-    if (chance < 300) {
-      rectangleWave.increaseWaves();
-    } else if (chance < 500) {
-      rectangleWave.decreaseWaves();
-      if (random(10) < 1) {
-        settings.colorMode = ["white", "random", "two-tone"][floor(random(3))];
-      }
-    } else if (chance < 750) {
-      rectangleWave.speed -= 0.1;
-    } else {
-      rectangleWave.speed += 0.1;
-      let chance2 = random() * 1000;
-      if (chance2 > 800) {
-        settings.rotate = !settings.rotate;
-      }
-    }
+    drawMobile();
   } else {
     textSize(16);
     stroke(255, 255, 255);
@@ -70,16 +48,33 @@ function draw() {
     text('fernandopinto.github.io/WaveTunnel', windowWidth - 270, windowHeight - 10);
   }
 
-  push();
-  if (settings.rotate) {
-    translate(windowWidth / 2, windowHeight / 2);
-    rotate(radians(frameCount * rotationSpeed));
-    translate(-(windowWidth / 2), -(windowHeight / 2));
-  }
   rectangleWave.display();
-  pop();
-
-  // WAVES
   cursor.display();
+
   keyboardWaveControl();
+}
+
+function drawMobile() {
+  settings.colorMode = "two-tone";
+  settings.backgroundColor = [255, 127, 63];
+  settings.rotate = true;
+  strokeWeigth = Math.random(10);
+
+  let chance = random() * 1000;
+  if (chance < 300) {
+    rectangleWave.addWaves(1);
+  } else if (chance < 500) {
+    rectangleWave.removeWaves(1);
+    if (random(10) < 1) {
+      // settings.colorMode = ["white", "random", "two-tone"][floor(random(3))];
+    }
+  } else if (chance < 750) {
+    rectangleWave.speed -= 0.1;
+  } else {
+    rectangleWave.speed += 0.1;
+    let chance2 = random() * 1000;
+    // if (chance2 > 800) {
+    //   settings.rotate = !settings.rotate;
+    // }
+  }
 }
