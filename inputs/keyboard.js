@@ -1,16 +1,16 @@
 function keyTyped() {
 
   if (keyCode === 49) {
-    settings.colorMode = 'two-tone';
+    globalSettings.colorMode = 'two-tone';
   }
   if (keyCode === 50) {
-    settings.colorMode = 'white';
+    globalSettings.colorMode = 'white';
   }
   if (keyCode === 51) {
-    settings.colorMode = 'random';
+    globalSettings.colorMode = 'random';
   }
   if (keyCode === 52) {
-    settings.colorMode = 'black-white';
+    globalSettings.colorMode = 'black-white';
   }
   if (keyCode === 32) {
     rectangleWave.reset();
@@ -27,9 +27,9 @@ function keyboardWaveControl() {
     rectangleWave.removeWaves(1);
   }
   if (keyIsDown(LEFT_ARROW)) {
-    rectangleWave.speed -= 0.01;
+    globalSettings.wave.speed -= 0.01;
   }
   if (keyIsDown(RIGHT_ARROW)) {
-    rectangleWave.speed += 0.01;
+    globalSettings.wave.speed += 0.01;
   }
 }
