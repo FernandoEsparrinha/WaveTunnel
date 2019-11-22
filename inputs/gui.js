@@ -1,6 +1,5 @@
 
 
 function setGUI() {
-    gui = createGui("WaveTunnel");
-    gui.addObject(settings);
+    globalSettings = guiGlue(settingsGUI);
 }

@@ -14,7 +14,10 @@ class Rectangle {
 
         this.grayTone = random(255);
 
-        this.rotationSpeed = (rotationSpeed / 200);
+        this.x = translateX;
+        this.y = translateY;
+
+        this.rotationSpeed = (globalSettings.rotation.rotationSpeed / 200);
     }
 
     refreshSpeed(speed) {
@@ -30,7 +33,7 @@ class Rectangle {
         if (this.iteration > 80 || this.iteration < -80) {
             this.reset();
         } else {
-            this.iteration += this.speed;
+            this.iteration += globalSettings.wave.speed;
         }
     }
 
@@ -44,7 +47,7 @@ class Rectangle {
     }
 
     display() {
-        switch (settings.colorMode) {
+        switch (globalSettings.colorMode) {
             case "two-tone":
                 this.paintStroke();
                 break;
@@ -68,12 +71,14 @@ class Rectangle {
         translate(windowWidth / 2, windowHeight / 2);
         scale(this.iteration);
 
-        if (settings.rotate) {
-            // rotate(this.lifespan * this.rotationSpeed);
-            rotate(this.lifespan * (rotationSpeed / 200));
+        if (globalSettings.rotation.rotate) {
+            rotate(this.lifespan * this.rotationSpeed);
+            //rotate(this.lifespan * (globalSettings.rotation.rotationSpeed / 200));
         }
-        strokeWeight(strokeWeigth);
+        strokeWeight(globalSettings.wave.weigth);
         rect(0, 0, windowWidth / 20, windowHeight / 20);
+        // drawPolygon(5);
+        // drawHalfTriangle();
         pop();
     }
 }

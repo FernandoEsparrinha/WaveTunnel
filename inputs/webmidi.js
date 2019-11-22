@@ -21,19 +21,19 @@ WebMidi.enable(function (err) {
 
             if (e.data[1] == 1 || e.data[1] == 2 || e.data[1] == 3) {
                 let percentage = (100 * e.data[2]) / 127
-                settings.backgroundColor[e.data[1] - 1] = 255 * percentage / 100
+                globalSettings.backgroundColor[e.data[1] - 1] = 255 * percentage / 100
             }
 
             if (e.data[1] == 4) {
-                rectangleWave.speed = map(e.data[2], 0, 127, -1, 1);
+                globalSettings.wave.speed = map(e.data[2], 0, 127, -1, 1);
             }
 
             if (e.data[1] == 8) {
-                rotationSpeed = map(e.data[2], 0, 127, -2, 2);
+                globalSettings.rotation.rotationSpeed = map(e.data[2], 0, 127, -2, 2);
             }
 
             if (e.data[1] == 7) {
-                strokeWeigth = map(e.data[2], 0, 127, 0.01, 1);
+                globalSettings.wave.weigth = map(e.data[2], 0, 127, 0.01, 1);
             }
 
             if (e.data[1] == 5) {
@@ -46,7 +46,7 @@ WebMidi.enable(function (err) {
 
 
 
-            if (settings.debugMode) {
+            if (globalSettings.debugMode) {
                 console.log("--------------------");
                 console.log("Controller name -> " + e.controller.name);
                 console.log("Controller number -> " + e.controller.number);
@@ -58,7 +58,7 @@ WebMidi.enable(function (err) {
 
     input.addListener('noteon', "all",
         function (e) {
-            if (settings.debugMode) {
+            if (globalSettings.debugMode) {
                 console.log("Received 'noteon' message (" + e.note.name + " - " + e.note.octave + ").");
             }
             if (e.note.name == "G" && e.note.octave == "2") {
@@ -80,7 +80,7 @@ WebMidi.enable(function (err) {
                 rectangleWave.removeWaves(100);
             }
             if (e.note.name == "C" && e.note.octave == "2") {
-                settings.rotate = !settings.rotate;
+                globalSettings.rotation.rotate = !globalSettings.rotation.rotate;
             }
         }
     );

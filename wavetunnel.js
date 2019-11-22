@@ -27,9 +27,9 @@ function setup() {
 }
 
 function draw() {
-  background(settings.backgroundColor);
+  background(globalSettings.backgroundColor);
 
-  if (settings.debugMode && !isMobileDevice()) {
+  if (globalSettings.debugMode && !isMobileDevice()) {
     let fps = frameRate();
     fill(255);
     stroke(0);
@@ -55,10 +55,10 @@ function draw() {
 }
 
 function drawMobile() {
-  settings.colorMode = "two-tone";
-  settings.backgroundColor = [255, 127, 63];
-  settings.rotate = true;
-  strokeWeigth = Math.random(10);
+  globalSettings.colorMode = "two-tone";
+  globalSettings.backgroundColor = [255, 127, 63];
+  globalSettings.rotation.rotate = true;
+  globalSettings.wave.weigth = Math.random(10);
 
   let chance = random() * 1000;
   if (chance < 300) {
@@ -66,7 +66,7 @@ function drawMobile() {
   } else if (chance < 500) {
     rectangleWave.removeWaves(1);
     if (random(10) < 1) {
-      // settings.colorMode = ["white", "random", "two-tone"][floor(random(3))];
+      // globalSettings.colorMode = ["white", "random", "two-tone"][floor(random(3))];
     }
   } else if (chance < 750) {
     rectangleWave.speed -= 0.1;
@@ -74,7 +74,7 @@ function drawMobile() {
     rectangleWave.speed += 0.1;
     let chance2 = random() * 1000;
     // if (chance2 > 800) {
-    //   settings.rotate = !settings.rotate;
+    //   globalSettings.rotation.rotate = !globalSettings.rotation.rotate;
     // }
   }
 }
