@@ -72,8 +72,8 @@ class Rectangle {
         scale(this.iteration);
 
         if (settings.rotate) {
-            // rotate(this.lifespan * this.rotationSpeed);
-            rotate(this.lifespan * (rotationSpeed / 200));
+            rotate(this.lifespan * this.rotationSpeed);
+            //rotate(this.lifespan * (rotationSpeed / 200));
         }
         strokeWeight(strokeWeigth);
         rect(0, 0, windowWidth / 20, windowHeight / 20);
