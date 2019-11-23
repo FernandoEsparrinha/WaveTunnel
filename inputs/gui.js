@@ -1,5 +1,6 @@
 
 
 function setGUI() {
-    globalSettings = guiGlue(settingsGUI);
+    var optionsGUI = { folded: true };
+    globalSettings = guiGlue(settingsGUI, optionsGUI);
 }
