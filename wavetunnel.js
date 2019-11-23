@@ -18,12 +18,12 @@ function setup() {
   console.log("Width: " + windowWidth);
   console.log("Height: " + windowHeight);
 
-  if (!isMobileDevice()) {
-    setGUI();
-  }
-
+  setGUI();
   rectangleWave = new RectangleWave();
-  cursor = new Cursor();
+
+  if (!isMobileDevice()) {
+    cursor = new Cursor();
+  }
 }
 
 function draw() {
@@ -46,35 +46,19 @@ function draw() {
     stroke(255, 255, 255);
     fill(255);
     text('fernandopinto.github.io/WaveTunnel', windowWidth - 270, windowHeight - 10);
+    cursor.display();
   }
 
   rectangleWave.display();
-  cursor.display();
 
   keyboardWaveControl();
 }
 
 function drawMobile() {
-  globalSettings.colorMode = "two-tone";
-  globalSettings.backgroundColor = [255, 127, 63];
-  globalSettings.rotation.rotate = true;
-  globalSettings.wave.weigth = Math.random(10);
-
   let chance = random() * 1000;
   if (chance < 300) {
     rectangleWave.addWaves(1);
   } else if (chance < 500) {
     rectangleWave.removeWaves(1);
-    if (random(10) < 1) {
-      // globalSettings.colorMode = ["white", "random", "two-tone"][floor(random(3))];
-    }
-  } else if (chance < 750) {
-    rectangleWave.speed -= 0.1;
-  } else {
-    rectangleWave.speed += 0.1;
-    let chance2 = random() * 1000;
-    // if (chance2 > 800) {
-    //   globalSettings.rotation.rotate = !globalSettings.rotation.rotate;
-    // }
   }
 }
