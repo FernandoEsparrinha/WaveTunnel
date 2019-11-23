@@ -1,5 +1,5 @@
 //returns params, a stripped version of paramsGUI, without all the GUI fluff
-function guiGlue(paramsGUI, optionsGUI){
+function guiGlue(paramsGUI, optionsGUI) {
 
     //pass options to GUI e.g., { autoPlace: false }
     optionsGUI = optionsGUI || {};
@@ -15,25 +15,26 @@ function guiGlue(paramsGUI, optionsGUI){
     //return stripped parameter object
     return params;
 
-    function renderParameters(paramsGUI, optionsGUI, params){
-    
+    function renderParameters(paramsGUI, optionsGUI, params) {
+
         //initial creation    
         var gui = new dat.GUI(optionsGUI);
 
         //walk the parameter tree
         unfurl(paramsGUI, gui, params);
 
-        function unfurl(obj, folder, params){
+        function unfurl(obj, folder, params) {
 
-            for (var key in obj){
+            for (var key in obj) {
 
                 var subObj = obj[key];
                 var leaf = isLeaf(subObj);
-                
-                if (leaf){
+
+                if (leaf) {
+
                     addToFolder(key, obj, subObj, folder, params);
                 }
-                else{ 
+                else {
                     //is folder
                     var subfolder = folder.addFolder(key);
                     if (!optionsGUI.folded)
@@ -47,15 +48,15 @@ function guiGlue(paramsGUI, optionsGUI){
 
             //a leaf object is one that contains no other objects
             //it is critical that none of the tracked parameters is itself an object
-            function isLeaf(obj){
+            function isLeaf(obj) {
 
                 var Leaf = true;
-                for (var key in obj){
+                for (var key in obj) {
 
                     if (key === 'choices' && obj.display === 'selector') continue;
 
-                    if (Leaf){
-                        var isObj = (Object.prototype.toString.call( obj[key] ) != '[object Object]');
+                    if (Leaf) {
+                        var isObj = (Object.prototype.toString.call(obj[key]) != '[object Object]');
                         Leaf = Leaf && isObj;
                     }
                     else
@@ -68,14 +69,16 @@ function guiGlue(paramsGUI, optionsGUI){
 
         }
 
-        function addToFolder(key, obj, options, folder, params){
+        function addToFolder(key, obj, options, folder, params) {
 
             var handle;
             params[key] = options.value;
 
             var display = options.display || '';
 
-            switch (display){
+            gui.remember(params);
+
+            switch (display) {
                 case 'range':
                     if (options.step)
                         handle = folder.add(params, key, options.min, options.max).step(options.step);
