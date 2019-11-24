@@ -27,11 +27,13 @@ reduces speed ⬅️  ➡️ increases speed
 
 #### Colour mode can also be exchanged using the numerical keys
 
-**1** - White mode
+**1** - Fixed color mode
 
-**2** - Rainbow mode
+**2** - White mode
 
-**3** - RGB mode
+**3** - Random color mode
+
+**4** - Black & White mode
 
 
 ## Roadmap
@@ -43,11 +45,12 @@ As a visual side project, consider this roadmap as a list of ideias that I possi
 - [x] Demo version for mobile
 - [x] Mobile web app 
 - [ ] Different shapes (at the moment only the rectangle is available) 
-- [ ] Rotation of the shapes
+- [x] Rotation of the shapes
 - [ ] Audio oscilators in order to create music with the experience
-- [ ] GUI with inputs in order to not be restricted to the keyboard
+- [x] GUI with inputs in order to not be restricted to the keyboard
 - [ ] Mouse cursor experience
 - [ ] Better mouse input
+- [ ] Changelog to replace this Roadmap
 
 <!-- ## Contributing
 
@@ -63,5 +66,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* @g-souka for inspiration and sharing ideias and concepts
+* [@g-souka](https://github.com/g-souka) for inspiration and sharing ideias and concepts
+* [@AndreCascais](https://github.com/AndreCascais) for the astronomical math knowledge 
 
