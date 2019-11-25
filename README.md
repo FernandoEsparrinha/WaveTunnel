@@ -1,31 +1,26 @@
 # WaveTunnel
 
 WaveTunnel is a visual project that came to be in the mind of a programmer that also likes design and visual arts.
-Getting to know processing, the project first came to be in the original [processing](https://processing.org/) software and after awhile, with some inspiration of close friends (such as @g-souka), got translated into the [p5 library](https://p5js.org/), in order to be easily shared and used.
+Getting to know processing, the project first came to be in the original [processing](https://processing.org/) software and, after awhile, got translated into the [p5 library](https://p5js.org/), in order to be easily shared and used.
 
 The original ideia of the project was to represent a tunnel of light, where the user can control the ride almost as a game, latter some game aspects came to mind but at the moment these aspects are not yet implemented.
 
 ## Getting Started
 
-WaveTunnel is very easy to use. Just go into [WaveTunnel](https://fernandopinto.github.io/WaveTunnel/) to check it out and use the controls described below. 
-
-> **⚠️ Note**
-> If you are checking WaveTunnel on a mobile platform, it won't have interactable inputs. > The app will create random patterns showing what it can do, consider it a demo version.
+Visit [WaveTunnel](https://fernandopinto.github.io/WaveTunnel/) to check it out, you can interact with the gui, with a midi controller or you can use the keyboard controls described below. 
 
 ### Controls
 
-Controls are mainly focused on keyboard input. Altough mouse input is already in mid development.
 
-#### In order to change the wave shapes the arrow keys can be used
+#### Arrow keys
 
 ⬆️ adds rectangles
 
 ⬇️ removes rectangles
 
-
 reduces speed ⬅️  ➡️ increases speed
 
-#### Colour mode can also be exchanged using the numerical keys
+#### Colour mode can be exchanged using the numerical keys
 
 **1** - Fixed color mode
 
@@ -63,6 +58,11 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 <!-- ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details -->
+
+## Libraries
+
+* [WebMidi.js](https://github.com/djipco/webmidi) - a library that allows web developers to interact with MIDI musical instruments and devices
+* [GuiGlue](https://github.com/dmvaldman/guiGlue) - a dat.gui wrapper
 
 ## Acknowledgments
 
