@@ -23,7 +23,10 @@ function setup() {
 }
 
 function draw() {
-  background(globalSettings.backgroundColor);
+  colorMode(HSB);
+  background(globalSettings.background.hue, globalSettings.background.saturation, globalSettings.background.value);
+
+  rectangleWave.speed = globalSettings.wave.speed;
 
   if (globalSettings.debugMode && !isMobileDevice()) {
     let fps = frameRate();

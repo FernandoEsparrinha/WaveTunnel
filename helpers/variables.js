@@ -5,10 +5,31 @@ let settingsGUI = {
         choices: ['two-tone', 'white', 'random', 'black-white'],
         listen: true
     },
-    backgroundColor: {
-        display: 'color',
-        value: [0, 0, 0],
-        listen: true
+    background: {
+        hue: {
+            display: 'range',
+            value: 0,
+            min: 0,
+            max: 255,
+            step: 1,
+            listen: true
+        },
+        saturation: {
+            display: 'range',
+            value: 0,
+            min: 0,
+            max: 255,
+            step: 1,
+            listen: true
+        },
+        value: {
+            display: 'range',
+            value: 0,
+            min: 0,
+            max: 255,
+            step: 1,
+            listen: true
+        }
     },
     debugMode: {
         value: location.hostname === "",
@@ -20,7 +41,7 @@ let settingsGUI = {
             value: 0.3,
             min: -1,
             max: 1,
-            step: 0.01,
+            step: 0.1,
             listen: true
         },
         weigth: {
@@ -36,6 +57,14 @@ let settingsGUI = {
         },
         remove: {
             value: function () { rectangleWave.removeWaves(1); }
+        },
+        sides: {
+            display: 'range',
+            value: 4,
+            min: 3,
+            max: 10,
+            step: 1,
+            listen: true
         }
     },
     rotation: {
