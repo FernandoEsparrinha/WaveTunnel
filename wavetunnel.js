@@ -46,7 +46,6 @@ function draw() {
     stroke(255, 255, 255);
     fill(255);
     text('fernandopinto.github.io/WaveTunnel', windowWidth - 270, windowHeight - 10);
-    cursor.display();
   }
 
   rectangleWave.display();
