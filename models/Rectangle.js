@@ -13,9 +13,14 @@ class Rectangle {
         this.lifespan = 0;
 
         this.grayTone = random(255);
+        this.randomColor = color(random(255), 25, 25);
 
-        this.x = translateX;
-        this.y = translateY;
+        this.weigth = globalSettings.wave.weigth
+
+        this.x = mouseX;
+        this.y = mouseY;
+
+        this.numberOfSides = globalSettings.wave.sides;
 
         this.rotationSpeed = (globalSettings.rotation.rotationSpeed / 200);
     }
@@ -30,18 +35,21 @@ class Rectangle {
 
     move() {
         this.lifespan++;
+        // console.log(this.lifespan % 100);
+        //if (this.lifespan % 100 == 99) {
+        //    this.reset();
         if (this.iteration > 80 || this.iteration < -80) {
             this.reset();
         } else {
-            this.iteration += globalSettings.wave.speed;
+            this.iteration += this.speed;
         }
     }
 
     paintStroke() {
         let rectColor = [
             Math.abs(this.iteration) * 10,
-            0,
-            0
+            100,
+            100,
         ];
         stroke(rectColor)
     }
@@ -55,7 +63,7 @@ class Rectangle {
                 stroke(color(255, 255, 255));
                 break;
             case "random":
-                stroke(color(random(255), random(255), random(255)));
+                stroke(this.randomColor);
                 break;
             case "black-white":
                 stroke(color(this.grayTone, this.grayTone, this.grayTone));
@@ -63,25 +71,26 @@ class Rectangle {
                 break;
         }
 
-        strokeWeight(1);
         rectMode(CENTER);
         noFill();
 
         push();
         translate(windowWidth / 2, windowHeight / 2);
+        // translate(this.x, this.y);
         scale(this.iteration);
 
         if (globalSettings.rotation.rotate) {
             rotate(this.lifespan * this.rotationSpeed);
             //rotate(this.lifespan * (globalSettings.rotation.rotationSpeed / 200));
         }
-        strokeWeight(globalSettings.wave.weigth);
-        rect(0, 0, windowWidth / 20, windowHeight / 20);
-        // drawPolygon(5);
+        strokeWeight(this.weigth);
+        // rect(0, 0, windowWidth / 20, windowHeight / 20);
+        drawPolygon(this.numberOfSides);
         // drawHalfTriangle();
         pop();
     }
 }
+
 
 function drawPolygon(n) {
     ang = ((180 * (n - 2)) / n) * (Math.PI / 180);

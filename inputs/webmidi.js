@@ -18,33 +18,33 @@ WebMidi.enable(function (err) {
 
     input.addListener('controlchange', "all",
         function (e) {
-
-            if (e.data[1] == 1 || e.data[1] == 2 || e.data[1] == 3) {
-                let percentage = (100 * e.data[2]) / 127
-                globalSettings.backgroundColor[e.data[1] - 1] = 255 * percentage / 100
+            // BACKGROUND COLOR
+            if (e.data[1] == 1) {
+                globalSettings.background.hue = map(e.data[2], 0, 127, 0, 255);
+            }
+            if (e.data[1] == 2) {
+                globalSettings.background.saturation = map(e.data[2], 0, 127, 0, 255);
+            }
+            if (e.data[1] == 3) {
+                globalSettings.background.value = map(e.data[2], 0, 127, 0, 255);
             }
 
+            // WAVE CONTROL
             if (e.data[1] == 4) {
                 globalSettings.wave.speed = map(e.data[2], 0, 127, -1, 1);
             }
 
-            if (e.data[1] == 8) {
-                globalSettings.rotation.rotationSpeed = map(e.data[2], 0, 127, -2, 2);
+            if (e.data[1] == 6) {
+                globalSettings.wave.sides = Math.round(map(e.data[2], 0, 127, 3, 10));
             }
 
             if (e.data[1] == 7) {
                 globalSettings.wave.weigth = map(e.data[2], 0, 127, 0.01, 1);
             }
 
-            if (e.data[1] == 5) {
-                translateX = map(e.data[2], 0, 127, 0, windowWidth);
+            if (e.data[1] == 8) {
+                globalSettings.rotation.rotationSpeed = map(e.data[2], 0, 127, -2, 2);
             }
-
-            if (e.data[1] == 6) {
-                translateY = map(e.data[2], 0, 127, 0, windowHeight);
-            }
-
-
 
             if (globalSettings.debugMode) {
                 console.log("--------------------");
