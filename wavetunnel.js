@@ -20,10 +20,6 @@ function setup() {
 
   setGUI();
   rectangleWave = new RectangleWave();
-
-  if (!isMobileDevice()) {
-    cursor = new Cursor();
-  }
 }
 
 function draw() {
