@@ -20,14 +20,13 @@ function setup() {
 
   setGUI();
   rectangleWave = new RectangleWave();
-
-  if (!isMobileDevice()) {
-    cursor = new Cursor();
-  }
 }
 
 function draw() {
-  background(globalSettings.backgroundColor);
+  colorMode(HSB);
+  background(globalSettings.background.hue, globalSettings.background.saturation, globalSettings.background.value);
+
+  rectangleWave.speed = globalSettings.wave.speed;
 
   if (globalSettings.debugMode && !isMobileDevice()) {
     let fps = frameRate();
@@ -46,7 +45,6 @@ function draw() {
     stroke(255, 255, 255);
     fill(255);
     text('fernandopinto.github.io/WaveTunnel', windowWidth - 270, windowHeight - 10);
-    cursor.display();
   }
 
   rectangleWave.display();
