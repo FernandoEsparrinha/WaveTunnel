@@ -19,7 +19,7 @@ function setup() {
   console.log("Height: " + windowHeight);
 
   setGUI();
-  rectangleWave = new RectangleWave();
+  rectangleWave = new PolygonWave();
 }
 
 function draw() {

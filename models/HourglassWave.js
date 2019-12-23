@@ -1,15 +1,15 @@
-class RectangleWave extends Wave {
+class HourglassWave extends Wave {
   constructor() {
     super();
 
     for (let i = 0; i < this.initialWaves; i++) {
-      this.waves.push(new Rectangle(this.speed));
+      this.waves.push(new Hourglass(this.speed));
     }
   }
 
   addWaves(amount) {
     for (let i = 0; i < amount; i++) {
-      this.waves.push(new Rectangle(this.speed));
+      this.waves.push(new Hourglass(this.speed));
     }
   }
 
