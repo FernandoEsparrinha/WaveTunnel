@@ -5,6 +5,23 @@ let settingsGUI = {
         choices: ['two-tone', 'white', 'random', 'black-white'],
         listen: true
     },
+    settings: {
+        version: {
+            value: "1.2.0"
+        },
+        fps: {
+            value: 0,
+            listen: true
+        },
+        numberOfWaves: {
+            value: 0,
+            listen: true
+        },
+        debugMode: {
+            value: location.hostname === "",
+            listen: true
+        },
+    },
     background: {
         hue: {
             display: 'range',
@@ -30,10 +47,6 @@ let settingsGUI = {
             step: 1,
             listen: true
         }
-    },
-    debugMode: {
-        value: location.hostname === "",
-        listen: true
     },
     wave: {
         speed: {

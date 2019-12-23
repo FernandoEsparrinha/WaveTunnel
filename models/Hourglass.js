@@ -1,4 +1,4 @@
-class Rectangle extends Form {
+class Hourglass extends Form {
     constructor(initialSpeed) {
         super(initialSpeed);
     }
@@ -25,14 +25,24 @@ class Rectangle extends Form {
 
         push();
         translate(windowWidth / 2, windowHeight / 2);
+        // translate(this.x, this.y);
         scale(this.iteration);
 
         if (globalSettings.rotation.rotate) {
             rotate(this.lifespan * this.rotationSpeed);
-            // rotate(this.lifespan * (globalSettings.rotation.rotationSpeed / 200));
+            //rotate(this.lifespan * (globalSettings.rotation.rotationSpeed / 200));
         }
         strokeWeight(this.weigth);
-        rect(0, 0, windowWidth / 20, windowHeight / 20);
+        drawHourglass();
         pop();
     }
+}
+
+function drawHourglass() {
+    translate()
+    beginShape();
+    line(0, 0, -20, 20);
+    line(0, 0, 20, 20);
+    line(-20, 20, 20, 20);
+    endShape(CLOSE);
 }

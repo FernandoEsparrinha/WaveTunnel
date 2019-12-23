@@ -46,7 +46,7 @@ WebMidi.enable(function (err) {
                 globalSettings.rotation.rotationSpeed = map(e.data[2], 0, 127, -2, 2);
             }
 
-            if (globalSettings.debugMode) {
+            if (globalSettings.settings.debugMode) {
                 console.log("--------------------");
                 console.log("Controller name -> " + e.controller.name);
                 console.log("Controller number -> " + e.controller.number);
@@ -58,7 +58,7 @@ WebMidi.enable(function (err) {
 
     input.addListener('noteon', "all",
         function (e) {
-            if (globalSettings.debugMode) {
+            if (globalSettings.settings.debugMode) {
                 console.log("Received 'noteon' message (" + e.note.name + " - " + e.note.octave + ").");
             }
             if (e.note.name == "G" && e.note.octave == "2") {

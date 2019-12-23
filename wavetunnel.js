@@ -1,41 +1,38 @@
 p5.disableFriendlyErrors = true;
+let fps;
 
 function setup() {
-  console.log("------------------------");
-  console.log("/ Welcome to WaveTunnel \\");
-  console.log("↑ adds rectangles");
-  console.log("⬇️ removes rectangles");
-  console.log("→ increases speed");
-  console.log("← reduces speed");
-  console.log("1 White mode");
-  console.log("2 Rainbow mode");
-  console.log("3 RGB mode");
-  console.log("------------------------");
+  console.group("Wavetunnel");
+  console.log("Welcome to WaveTunnel !!");
+  console.log("Feel free to add your own piece of code into the repo ! ");
+  console.log("https://github.com/FernandoPinto/WaveTunnel ");
+  console.groupEnd();
 
+  console.group("Setup")
   console.log("Setting up wave tunnel..");
-  console.log("Creating canvas");
+
+  console.group("Canvas");
   createCanvas(windowWidth, windowHeight);
   console.log("Width: " + windowWidth);
   console.log("Height: " + windowHeight);
+  console.groupEnd();
+
+  console.groupEnd();
 
   setGUI();
-  rectangleWave = new RectangleWave();
+  rectangleWave = new PolygonWave();
 }
 
 function draw() {
+
   colorMode(HSB);
   background(globalSettings.background.hue, globalSettings.background.saturation, globalSettings.background.value);
 
   rectangleWave.speed = globalSettings.wave.speed;
 
-  if (globalSettings.debugMode && !isMobileDevice()) {
-    let fps = frameRate();
-    fill(255);
-    stroke(0);
-    text('Version 1.0.0', 10, height - 70);
-    text("1st Wave speed: " + rectangleWave.waves[0].speed, 10, height - 50);
-    text("Waves: " + rectangleWave.waves.length, 10, height - 30);
-    text("FPS: " + fps.toFixed(2), 10, height - 10);
+  if (globalSettings.settings.debugMode && !isMobileDevice()) {
+    globalSettings.settings.fps = frameRate().toFixed(2);
+    globalSettings.settings.numberOfWaves = rectangleWave.waves.length;
   }
 
   if (isMobileDevice()) {
