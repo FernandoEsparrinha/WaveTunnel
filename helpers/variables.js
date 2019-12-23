@@ -7,7 +7,7 @@ let settingsGUI = {
     },
     settings: {
         version: {
-            value: "1.0.0"
+            value: "1.2.0"
         },
         fps: {
             value: 0,
