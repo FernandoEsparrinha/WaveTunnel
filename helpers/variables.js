@@ -2,7 +2,7 @@ let settingsGUI = {
     colorMode: {
         display: 'selector',
         value: 'two-tone',
-        choices: ['two-tone', 'white', 'random', 'black-white'],
+        choices: ['two-tone', 'white', 'black', 'random', 'black-white', 'rainbow'],
         listen: true
     },
     settings: {
