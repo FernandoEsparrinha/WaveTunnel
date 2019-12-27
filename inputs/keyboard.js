@@ -15,6 +15,14 @@ function keyTyped() {
   if (keyCode === 32) {
     rectangleWave.reset();
   }
+  if (keyCode === 81) {
+    capturer.start();
+  }
+  if (keyCode === 87) {
+    capturer.stop();
+    capturer.save();
+  }
+
 
   return false;
 }
