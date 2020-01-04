@@ -87,10 +87,10 @@ let settingsGUI = {
         },
         rotationSpeed: {
             display: 'range',
-            value: 1,
+            value: 0.3,
             min: -1,
             max: 1,
-            step: 0.01,
+            step: 0.1,
             listen: true
         }
     }

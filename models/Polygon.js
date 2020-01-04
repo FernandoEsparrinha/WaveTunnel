@@ -13,10 +13,10 @@ class Polygon extends Form {
         translate(width / 2, height / 2);
 
         if (globalSettings.rotation.rotate) {
-            rotate(this.lifespan * this.rotationSpeed);
+            rotate(this.rotationValue);
         }
 
-        scale(this.iteration);
+        scale(this.scaleValue);
         strokeWeight(this.weigth);
         drawPolygon(this.numberOfSides);
         pop();
