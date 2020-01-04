@@ -12,6 +12,9 @@ function keyTyped() {
   if (keyCode === 52) {
     globalSettings.colorMode = 'black-white';
   }
+  if (keyCode === 53) {
+    globalSettings.colorMode = 'rainbow';
+  }
   if (keyCode === 32) {
     rectangleWave.reset();
   }

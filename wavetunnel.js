@@ -28,6 +28,8 @@ function draw() {
   colorMode(HSB);
   background(globalSettings.background.hue, globalSettings.background.saturation, globalSettings.background.value);
 
+  // rectangleWave.addWaves(1);
+
   rectangleWave.speed = globalSettings.wave.speed;
   rectangleWave.display();
 

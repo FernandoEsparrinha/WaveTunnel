@@ -5,6 +5,8 @@ Getting to know processing, the project first came to be in the original [proces
 
 The original ideia of the project was to represent a tunnel of light, where the user can control the ride almost as a game, latter some game aspects came to mind but at the moment these aspects are not yet implemented.
 
+[WaveTunnel](https://gfycat.com/ifr/QuickDisloyalAmericanrobin)
+
 ## Getting Started
 
 Visit [WaveTunnel](https://fernandopinto.github.io/WaveTunnel/) to check it out, you can interact with the gui, with a midi controller or you can use the keyboard controls described below. 
@@ -20,15 +22,17 @@ Visit [WaveTunnel](https://fernandopinto.github.io/WaveTunnel/) to check it out,
 
 reduces speed ⬅️  ➡️ increases speed
 
-#### Colour mode can be exchanged using the numerical keys
+#### Color mode can be exchanged using the numerical keys
 
-**1** - Fixed color mode
+**1** - Two-tone (currently still in development)
 
 **2** - White mode
 
-**3** - Random color mode
+**3** - Random (currently still in development)
 
-**4** - Black & White mode
+**4** - Black & White
+
+**5** - Rainbow
 
 
 ## Roadmap
@@ -39,7 +43,7 @@ As a visual side project, consider this roadmap as a list of ideias that I possi
 - [x] Colour mode
 - [x] Demo version for mobile
 - [x] Mobile web app 
-- [ ] Different shapes (at the moment only the rectangle is available) 
+- [x] Different shapes (at the moment only the rectangle is available) 
 - [x] Rotation of the shapes
 - [ ] Audio oscilators in order to create music with the experience
 - [x] GUI with inputs in order to not be restricted to the keyboard
@@ -63,9 +67,11 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 * [WebMidi.js](https://github.com/djipco/webmidi) - a library that allows web developers to interact with MIDI musical instruments and devices
 * [GuiGlue](https://github.com/dmvaldman/guiGlue) - a dat.gui wrapper
+* [CCapture.js](https://github.com/spite/ccapture.js/) - a library that allows capturing the animation in order to create videos
 
 ## Acknowledgments
 
 * [@g-souka](https://github.com/g-souka) for inspiration and sharing ideias and concepts
-* [@AndreCascais](https://github.com/AndreCascais) for the astronomical math knowledge 
+* [@AndreCascais](https://github.com/AndreCascais) for the astronomical math knowledge
+* All my friends which gave me precious information, ideas and motivation to improve 
 
