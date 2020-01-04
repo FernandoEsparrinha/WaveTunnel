@@ -43,7 +43,7 @@ WebMidi.enable(function (err) {
             }
 
             if (e.data[1] == 8) {
-                globalSettings.rotation.rotationSpeed = map(e.data[2], 0, 127, -2, 2);
+                globalSettings.rotation.rotationSpeed = map(e.data[2], 0, 127, -1, 1);
             }
 
             if (globalSettings.settings.debugMode) {

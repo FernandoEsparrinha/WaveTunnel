@@ -1,5 +1,6 @@
 p5.disableFriendlyErrors = true;
 let fps;
+let capturer;
 
 function setup() {
   console.group("Wavetunnel");
@@ -8,16 +9,15 @@ function setup() {
   console.log("https://github.com/FernandoPinto/WaveTunnel ");
   console.groupEnd();
 
-  console.group("Setup")
-  console.log("Setting up wave tunnel..");
-
-  console.group("Canvas");
-  createCanvas(windowWidth, windowHeight);
-  console.log("Width: " + windowWidth);
-  console.log("Height: " + windowHeight);
-  console.groupEnd();
-
-  console.groupEnd();
+  if (isMobileDevice()) {
+    createCanvas(windowWidth, windowHeight);
+  } else {
+    // createCanvas(1080, 1080);
+    createCanvas(windowWidth, windowHeight);
+    // The following command will transform every frame captured by CCapture into an mp4 video
+    // ffmpeg -r 30 -f image2 -s 1080x1080 -i "%07d.jpg" -vcodec libx264 -crf 17 -pix_fmt yuv420p output.mp4
+    capturer = new CCapture({ format: 'jpg', framerate: 30, name: 'Wavetunnel-' + Date.now(), verbose: false });
+  }
 
   setGUI();
   rectangleWave = new PolygonWave();
@@ -28,9 +28,12 @@ function draw() {
   colorMode(HSB);
   background(globalSettings.background.hue, globalSettings.background.saturation, globalSettings.background.value);
 
-  rectangleWave.speed = globalSettings.wave.speed;
+  // rectangleWave.addWaves(1);
 
-  if (globalSettings.settings.debugMode && !isMobileDevice()) {
+  rectangleWave.speed = globalSettings.wave.speed;
+  rectangleWave.display();
+
+  if (globalSettings.settings.debugMode) {
     globalSettings.settings.fps = frameRate().toFixed(2);
     globalSettings.settings.numberOfWaves = rectangleWave.waves.length;
   }
@@ -38,13 +41,8 @@ function draw() {
   if (isMobileDevice()) {
     drawMobile();
   } else {
-    textSize(16);
-    stroke(255, 255, 255);
-    fill(255);
-    text('fernandopinto.github.io/WaveTunnel', windowWidth - 270, windowHeight - 10);
+    capturer.capture(document.getElementById('defaultCanvas0'));
   }
-
-  rectangleWave.display();
 
   keyboardWaveControl();
 }

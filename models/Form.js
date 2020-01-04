@@ -7,20 +7,23 @@ class Form {
 
         this.height = 0;
         this.width = 0;
-        this.iteration = 0;
+
+        this.scaleValue = 0;
+        this.scaleIteration = 0.0;
+
+        this.rotationValue = 0;
+        this.rotationIteration = 0;
 
         this.speed = initialSpeed;
         this.lifespan = 0;
 
         this.grayTone = random(255);
-        this.randomColor = color(globalSettings.background.hue + 180, 100, 100);
+        this.randomColor = color(random(255), 100, 100);
 
         this.weigth = globalSettings.wave.weigth
 
         this.x = mouseX;
         this.y = mouseY;
-
-        this.numberOfSides = globalSettings.wave.sides;
 
         this.rotationSpeed = (globalSettings.rotation.rotationSpeed / 200);
     }
@@ -29,30 +32,42 @@ class Form {
         this.speed = speed;
     }
 
-    reset() {
-        this.iteration = 0;
-    }
-
     move() {
         this.lifespan++;
-        // console.log(this.lifespan % 100);
-        //if (this.lifespan % 100 == 99) {
-        //    this.reset();
-        if (this.iteration > 80 || this.iteration < -80) {
-            this.reset();
-        } else {
-            this.iteration += this.speed;
+
+        this.scaleValue = this.scaleIteration % 80;
+        // this.scaleValue = (sin(this.scaleIteration / 4) * 10) + 10;
+        // this.scaleValue = Math.abs(sin(this.scaleIteration / 4) * 10) + 10;
+
+        this.rotationValue = this.rotationIteration % 360;
+        // this.rotationValue = (sin(this.rotationIteration / 4) * 10) + 10;
+        // this.rotationValue = Math.abs(sin(this.rotationIteration / 4) * 10) + 10;
+
+        this.scaleIteration += globalSettings.wave.speed / 4;
+        this.rotationIteration += globalSettings.rotation.rotationSpeed / 4;
+    }
+
+    display() {
+        switch (globalSettings.colorMode) {
+            case "two-tone":
+                stroke(color(100, 255, 255 - Math.abs(this.lifespan) % 255))
+                break;
+            case "white":
+                stroke(color(255, 0, 255));
+                break;
+            case "black":
+                stroke(color(255, 0, 0));
+                break;
+            case "random":
+                stroke(color((sin(this.scaleIteration / 4) * 255) + 10, 255, 255));
+                break;
+            case "rainbow":
+                stroke(color(this.lifespan % 255, 255, 255));
+                break;
+            case "black-white":
+                stroke(color(0, 0, this.grayTone));
+            default:
+                break;
         }
     }
-
-    paintStroke() {
-        let rectColor = [
-            Math.abs(this.iteration) * 10,
-            100,
-            100,
-        ];
-        stroke(rectColor)
-    }
-
-    display() { }
 }

@@ -2,7 +2,7 @@ let settingsGUI = {
     colorMode: {
         display: 'selector',
         value: 'two-tone',
-        choices: ['two-tone', 'white', 'random', 'black-white'],
+        choices: ['two-tone', 'white', 'black', 'random', 'black-white', 'rainbow'],
         listen: true
     },
     settings: {
@@ -87,10 +87,10 @@ let settingsGUI = {
         },
         rotationSpeed: {
             display: 'range',
-            value: 1,
+            value: 0.3,
             min: -1,
             max: 1,
-            step: 0.01,
+            step: 0.1,
             listen: true
         }
     }

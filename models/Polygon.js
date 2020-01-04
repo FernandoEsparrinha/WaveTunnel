@@ -1,36 +1,22 @@
 class Polygon extends Form {
     constructor(initialSpeed) {
         super(initialSpeed);
+        this.numberOfSides = globalSettings.wave.sides;
     }
 
     display() {
-        switch (globalSettings.colorMode) {
-            case "two-tone":
-                this.paintStroke();
-                break;
-            case "white":
-                stroke(color(255, 255, 255));
-                break;
-            case "random":
-                stroke(color(globalSettings.background.hue + 60, globalSettings.background.saturation, globalSettings.background.value));
-                break;
-            case "black-white":
-                stroke(color(this.grayTone, this.grayTone, this.grayTone));
-            default:
-                break;
-        }
-
+        super.display();
         rectMode(CENTER);
         noFill();
 
         push();
-        translate(windowWidth / 2, windowHeight / 2);
+        translate(width / 2, height / 2);
 
         if (globalSettings.rotation.rotate) {
-            rotate(this.lifespan * this.rotationSpeed);
+            rotate(this.rotationValue);
         }
 
-        scale(this.iteration);
+        scale(this.scaleValue);
         strokeWeight(this.weigth);
         drawPolygon(this.numberOfSides);
         pop();
