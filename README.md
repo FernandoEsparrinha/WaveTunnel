@@ -5,8 +5,6 @@ Getting to know processing, the project first came to be in the original [proces
 
 The original ideia of the project was to represent a tunnel of light, where the user can control the ride almost as a game, latter some game aspects came to mind but at the moment these aspects are not yet implemented.
 
-[WaveTunnel](https://thumbs.gfycat.com/QuickDisloyalAmericanrobin-mobile.mp4)
-
 ## Getting Started
 
 Visit [WaveTunnel](https://fernandopinto.github.io/WaveTunnel/) to check it out, you can interact with the gui, with a midi controller or you can use the keyboard controls described below. 
