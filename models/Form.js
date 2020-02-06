@@ -35,22 +35,26 @@ class Form {
     move() {
         this.lifespan++;
 
-        this.scaleValue = this.scaleIteration % 80;
-        // this.scaleValue = (sin(this.scaleIteration / 4) * 10) + 10;
+        this.scaleValue = this.scaleIteration % 3000;
+        // this.scaleValue = (sin(this.scaleIteration / 4) * 100) + 10;
         // this.scaleValue = Math.abs(sin(this.scaleIteration / 4) * 10) + 10;
 
         this.rotationValue = this.rotationIteration % 360;
         // this.rotationValue = (sin(this.rotationIteration / 4) * 10) + 10;
         // this.rotationValue = Math.abs(sin(this.rotationIteration / 4) * 10) + 10;
 
-        this.scaleIteration += globalSettings.wave.speed / 4;
+        this.scaleIteration += globalSettings.wave.speed;
         this.rotationIteration += globalSettings.rotation.rotationSpeed / 4;
     }
 
     display() {
         switch (globalSettings.colorMode) {
             case "two-tone":
-                stroke(color(100, 255, 255 - Math.abs(this.lifespan) % 255))
+                if (isSoundActive) {
+                    stroke(color(100, 255, spectrum[0]))
+                } else {
+                    stroke(color(100, 255, 255 - Math.abs(this.lifespan) % 255))
+                }
                 break;
             case "white":
                 stroke(color(255, 0, 255));

@@ -15,6 +15,9 @@ function keyTyped() {
   if (keyCode === 53) {
     globalSettings.colorMode = 'rainbow';
   }
+  if (keyCode === 192) {
+    song.play();
+  }
   if (keyCode === 32) {
     rectangleWave.reset();
   }
@@ -25,7 +28,6 @@ function keyTyped() {
     capturer.stop();
     capturer.save();
   }
-
 
   return false;
 }

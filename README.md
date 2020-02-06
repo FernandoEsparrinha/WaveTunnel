@@ -9,6 +9,11 @@ The original ideia of the project was to represent a tunnel of light, where the 
 
 Visit [WaveTunnel](https://fernandopinto.github.io/WaveTunnel/) to check it out, you can interact with the gui, with a midi controller or you can use the keyboard controls described below. 
 
+
+#### Audio experiments (work in progress)
+
+In order to test audio the user needs to run p5-cli in order to instantiate p5 into node. Without this step the audio will not load.
+
 ### Controls
 
 
@@ -66,6 +71,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * [WebMidi.js](https://github.com/djipco/webmidi) - a library that allows web developers to interact with MIDI musical instruments and devices
 * [GuiGlue](https://github.com/dmvaldman/guiGlue) - a dat.gui wrapper
 * [CCapture.js](https://github.com/spite/ccapture.js/) - a library that allows capturing the animation in order to create videos
+* [p5-cli](https://www.npmjs.com/package/p5-cli) - NPM package used in order to deploy p5 on node easily 
 
 ## Acknowledgments
 
