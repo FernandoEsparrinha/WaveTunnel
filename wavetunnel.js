@@ -15,9 +15,6 @@ function setup() {
 
   if (isMobileDevice()) {
     createCanvas(windowWidth, windowHeight);
-
-    mic = new p5.AudioIn()
-    mic.start();
   } else {
     createCanvas(1080, 1080);
     // createCanvas(windowWidth, windowHeight);
@@ -62,10 +59,5 @@ function draw() {
 }
 
 function drawMobile() {
-  let chance = random() * 1000;
-  if (chance < 300) {
-    rectangleWave.addWaves(1);
-  } else if (chance < 500) {
-    rectangleWave.removeWaves(1);
-  }
+  rectangleWave.addWaves(1);
 }
