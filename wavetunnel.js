@@ -16,8 +16,8 @@ function setup() {
   if (isMobileDevice()) {
     createCanvas(windowWidth, windowHeight);
   } else {
-    createCanvas(1080, 1080);
-    // createCanvas(windowWidth, windowHeight);
+    // createCanvas(1080, 1080);
+    createCanvas(windowWidth, windowHeight);
     // The following command will transform every frame captured by CCapture into an mp4 video
     // ffmpeg -r 30 -f image2 -s 1080x1080 -i "%07d.jpg" -vcodec libx264 -crf 17 -pix_fmt yuv420p output.mp4
     capturer = new CCapture({ format: 'jpg', framerate: 30, name: 'Wavetunnel-' + Date.now(), verbose: false });
