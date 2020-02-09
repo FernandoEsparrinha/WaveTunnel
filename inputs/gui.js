@@ -1,20 +1,20 @@
 isGuiActive = false;
 function setGUI() {
     isGuiActive = true;
-    var optionsGUI = { folded: true };
+    var optionsGUI = { folded: isMobileDevice() };
     globalSettings = guiGlue(settingsGUI, optionsGUI);
 }
 
 let settingsGUI = {
     colorMode: {
         display: 'selector',
-        value: 'two-tone',
+        value: 'rainbow',
         choices: ['two-tone', 'white', 'black', 'random', 'black-white', 'rainbow'],
         listen: true
     },
     settings: {
         version: {
-            value: "1.2.0"
+            value: "1.3.3"
         },
         fps: {
             value: 0,
@@ -23,11 +23,7 @@ let settingsGUI = {
         numberOfWaves: {
             value: 0,
             listen: true
-        },
-        debugMode: {
-            value: location.hostname === "",
-            listen: true
-        },
+        }
     },
     background: {
         hue: {
@@ -66,7 +62,7 @@ let settingsGUI = {
         },
         weigth: {
             display: 'range',
-            value: 0.1,
+            value: 0.01,
             min: 0.1,
             max: 1,
             step: 0.01,

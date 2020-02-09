@@ -51,11 +51,7 @@ class Form {
         switch (globalSettings.colorMode) {
             case "two-tone":
                 if (isSoundActive) {
-                    if (isMobileDevice()) {
-                        stroke(color(100, 255, map(mic.getLevel(), 0, 1, 0, 255)))
-                    } else {
-                        stroke(color(100, 255, spectrum[0]))
-                    }
+                    stroke(color(spectrum[0], 255, 255));
                 } else {
                     stroke(color(100, 255, 255 - Math.abs(this.lifespan) % 255))
                 }
