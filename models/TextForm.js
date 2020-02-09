@@ -19,7 +19,7 @@ class TextForm extends Form {
         scale(this.scaleValue);
         strokeWeight(this.weigth);
         textAlign(CENTER, CENTER);
-        text("o", 0, 0);
+        text("*", 0, 0);
         pop();
     }
 }
