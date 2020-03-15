@@ -24,7 +24,7 @@ class PolygonWave extends Wave {
   }
 
   display() {
-
+    super.display();
     for (let i = 0; i < this.waves.length; i++) {
       if (!this.individualMode) {
         this.waves[i].refreshSpeed(this.speed);
