@@ -7,7 +7,7 @@ function setupGUI() {
 let settingsGUI = {
     colorMode: {
         display: 'selector',
-        value: 'rainbow',
+        value: 'white',
         choices: ['two-tone', 'white', 'black', 'random', 'black-white', 'rainbow'],
         listen: true
     },
@@ -53,7 +53,7 @@ let settingsGUI = {
     wave: {
         speed: {
             display: 'range',
-            value: 0.3,
+            value: 0.02,
             min: -1,
             max: 1,
             step: 0.1,
@@ -95,13 +95,6 @@ let settingsGUI = {
             step: 0.1,
             listen: true
         }
-    },
-    music: {
-        play: {
-            value: function () { song.play(); }
-        },
-        stop: {
-            value: function () { song.stop(); }
-        }
     }
+
 }
