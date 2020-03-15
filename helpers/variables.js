@@ -53,3 +53,10 @@ rotateAnimationFunctions.set('ease', false)
 //     }
 // ];
 
+
+let autoMode = 0;
+
+let isSoundActive = 0;
+let isGuiActive = 1;
+let isWebMidiActive = 0;
+let isOscActive = 1;
