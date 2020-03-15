@@ -26,3 +26,9 @@ function rgbToHex(rgb) {
 String.prototype.replaceAtIndex = function (index, replacement) {
   return this.substr(0, index) + replacement + this.substr(index + replacement.length);
 }
+
+function ease(origin, destiny) {
+  let easing = 0.05;
+  let dx = destiny - origin;
+  return dx * easing;
+}
