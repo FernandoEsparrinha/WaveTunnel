@@ -7,9 +7,9 @@ class RectangleWave extends Wave {
     }
   }
 
-  addWaves(amount) {
+  addWaves(amount, option = {}) {
     for (let i = 0; i < amount; i++) {
-      this.waves.push(new Rectangle(this.speed));
+      this.waves.push(new Rectangle(this.speed, option));
     }
   }
 
