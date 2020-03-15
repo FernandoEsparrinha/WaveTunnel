@@ -22,8 +22,11 @@ function setup() {
     capturer = new CCapture({ format: 'jpg', framerate: 30, name: 'Wavetunnel-' + Date.now(), verbose: false });
   }
 
-  setupSound();
-  setGUI();
+  if (isSoundActive) {
+    setupSound();
+  }
+  if (isGuiActive) {
+    setupGUI();
 
   // rectangleWave = new LineWave();
   rectangleWave = new PolygonWave();
