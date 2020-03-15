@@ -52,7 +52,9 @@ function draw() {
   globalSettings.settings.fps = frameRate().toFixed(2);
   globalSettings.settings.numberOfWaves = rectangleWave.waves.length;
 
-  rectangleWave.addWaves(1);
+  if (autoMode) {
+    rectangleWave.addWaves(1, { rotate: globalSettings.rotation.rotate });
+  }
   rectangleWave.speed = globalSettings.wave.speed;
   rectangleWave.display();
 
