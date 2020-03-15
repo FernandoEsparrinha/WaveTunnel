@@ -1,6 +1,5 @@
-isGuiActive = false;
-function setGUI() {
-    isGuiActive = true;
+
+function setupGUI() {
     var optionsGUI = { folded: isMobileDevice() };
     globalSettings = guiGlue(settingsGUI, optionsGUI);
 }
