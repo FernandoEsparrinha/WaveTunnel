@@ -18,19 +18,42 @@ class Line extends Form {
 
         scale(this.scaleValue);
         strokeWeight(this.weigth);
-        drawLine(this.numberOfSides);
+        drawLine();
         pop();
     }
 }
 
-function drawLine(n) {
-    ang = ((180 * (n - 2)) / n) * (Math.PI / 180);
-    alt = Math.tan(ang / 2) * 10;
+function drawLine() {
+    // ang = ((180 * (n - 2)) / n) * (Math.PI / 180);
+    // alt = Math.tan(ang / 2) * 10;
 
-    translate(-10, alt);
-
+    // translate(-10, alt);
+    push();
+    translate(1, 0);
     v0 = [0, 0];
-    v1 = [80, 0];
+    v1 = [1, 0];
     line(v0[0], v0[1], v1[0], v1[1]);
+    pop();
+
+    push();
+    translate(-1, 0);
+    v0 = [0, 0];
+    v1 = [-1, 0];
+    line(v0[0], v0[1], v1[0], v1[1]);
+    pop();
+
+    push();
+    translate(0, 1);
+    v0 = [0, 0];
+    v1 = [0, 1];
+    line(v0[0], v0[1], v1[0], v1[1]);
+    pop();
+
+    push();
+    translate(0, -1);
+    v0 = [0, 0];
+    v1 = [0, -1];
+    line(v0[0], v0[1], v1[0], v1[1]);
+    pop();
 }
 
