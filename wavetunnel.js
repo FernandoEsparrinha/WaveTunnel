@@ -27,6 +27,14 @@ function setup() {
   }
   if (isGuiActive) {
     setupGUI();
+  }
+  if (isWebMidiActive) {
+    setupWebMidi();
+  }
+  if (isOscActive) {
+    setupOsc();
+  }
+
 
   // rectangleWave = new LineWave();
   rectangleWave = new PolygonWave();
