@@ -75,5 +75,5 @@ function draw() {
 }
 
 function drawMobile() {
-  rectangleWave.addWaves(1);
+  rectangleWave.addWaves(1, { rotate: true });
 }
