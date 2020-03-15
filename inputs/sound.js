@@ -1,6 +1,17 @@
-let isSoundActive = false;
+
+let musicSettings = {
+    play: {
+        value: function () { song.play(); }
+    },
+    stop: {
+        value: function () { song.stop(); }
+    }
+}
+
+
 function setupSound() {
-    isSoundActive = true;
+
+    settingsGUI["music"] = musicSettings;
 
     song.play();
     fft = new p5.FFT();
