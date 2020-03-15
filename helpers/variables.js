@@ -30,3 +30,26 @@ rotateAnimationFunctions.set('cos', false)
 rotateAnimationFunctions.set('abs', false)
 rotateAnimationFunctions.set('ease', false)
 
+// let scaleAnimationFunctions = [
+//     {
+//         name: 'linear',
+//         function: 'this.scaleIteration % 200',
+//         state: true
+//     },
+//     {
+//         name: 'sin',
+//         function: '(sin(this.scaleIteration / 4) * 100) + 10',
+//         state: false
+//     },
+//     {
+//         name: 'easesin',
+//         function: 'ease(this.scaleValue, (sin(this.scaleIteration) * 150) + 300)',
+//         state: false
+//     },
+//     {
+//         name: 'abssin',
+//         function: 'Math.abs(sin(this.scaleIteration / 4) * 10) + 10',
+//         state: false
+//     }
+// ];
+
