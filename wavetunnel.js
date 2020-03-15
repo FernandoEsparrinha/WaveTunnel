@@ -1,7 +1,8 @@
 p5.disableFriendlyErrors = true;
 
 function preload() {
-  song = loadSound('assets/SocialConstruct.mp3');
+  // song = loadSound('assets/SocialConstruct.mp3');
+  song = loadSound('assets/TameImpala.mp3');
 }
 
 function setup() {
