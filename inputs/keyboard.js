@@ -21,12 +21,19 @@ function keyTyped() {
   if (keyCode === 32) {
     rectangleWave.reset();
   }
-  if (keyCode === 81) {
-    capturer.start();
-  }
-  if (keyCode === 87) {
-    capturer.stop();
-    capturer.save();
+
+  if (keyCode === 13) {
+    if (isRecording) {
+      console.log("⏹ Stopped recording !")
+      capturer.stop()
+      isRecording = 0
+      capturer.save()
+    } else {
+      console.log("⏺ Recording !")
+      capturer.start()
+      isRecording = 1
+    }
+
   }
 
   return false;
