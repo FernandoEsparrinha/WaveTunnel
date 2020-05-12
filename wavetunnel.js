@@ -36,12 +36,12 @@ function setup() {
     setupOsc()
   }
 
-  if (getItem('settings') != null) {
-    globalSettings = getItem('settings')
-  }
-  if (getItem('variables') != null) {
-    rangeValues = getItem('variables')
-  }
+  // if (getItem('settings') != null) {
+  //   globalSettings = getItem('settings')
+  // }
+  // if (getItem('variables') != null) {
+  //   rangeValues = getItem('variables')
+  // }
 
   // rectangleWave = new LineWave()
   rectangleWave = new PolygonWave()
@@ -74,10 +74,10 @@ function draw() {
     }
 
     keyboardWaveControl()
-    storeItem('settings', globalSettings)
-    storeItem('variables', rangeValues)
-    storeItem('scaleAnimationFunctions', scaleAnimationFunctions)
-    storeItem('rotateAnimationFunctions', rotateAnimationFunctions)
+    // storeItem('settings', globalSettings)
+    // storeItem('variables', rangeValues)
+    // storeItem('scaleAnimationFunctions', scaleAnimationFunctions)
+    // storeItem('rotateAnimationFunctions', rotateAnimationFunctions)
   }
 }
 
