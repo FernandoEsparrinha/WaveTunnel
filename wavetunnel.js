@@ -64,11 +64,6 @@ function draw() {
       rectangleWave.addWaves(1, { rotate: globalSettings.rotation.rotate })
     }
 
-  // let count = map(frameCount % 300, 0, 300, -1, 1);
-  // let variation = (sin(count / 4) * 4);
-  // let variation = 0.5 - (1 / Math.PI) * acos(cos(count * Math.PI));
-  // globalSettings.rotation.rotationSpeed += ease(globalSettings.rotation.rotationSpeed, variation * 2);
-  // globalSettings.wave.speed += ease(globalSettings.wave.speed, Math.abs(variation / 10));
     rectangleWave.speed = globalSettings.wave.speed
     rectangleWave.display()
 
