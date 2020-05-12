@@ -7,10 +7,10 @@ class PolygonWave extends Wave {
     }
   }
 
-  addWaves(amount) {
-    if (this.waves.length < 300) {
+  addWaves(amount, option = {}) {
+    if (this.waves.length < this.maxForms) {
       for (let i = 0; i < amount; i++) {
-        this.waves.push(new Polygon(this.speed));
+        this.waves.push(new Polygon(this.speed, option));
       }
     }
   }
@@ -24,7 +24,7 @@ class PolygonWave extends Wave {
   }
 
   display() {
-
+    super.display();
     for (let i = 0; i < this.waves.length; i++) {
       if (!this.individualMode) {
         this.waves[i].refreshSpeed(this.speed);

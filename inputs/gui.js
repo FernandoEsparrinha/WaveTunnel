@@ -1,14 +1,13 @@
-isGuiActive = false;
-function setGUI() {
-    isGuiActive = true;
-    var optionsGUI = { folded: isMobileDevice() };
-    globalSettings = guiGlue(settingsGUI, optionsGUI);
+
+function setupGUI() {
+    var optionsGUI = { folded: isMobileDevice() }
+    globalSettings = guiGlue(settingsGUI, optionsGUI)
 }
 
 let settingsGUI = {
     colorMode: {
         display: 'selector',
-        value: 'rainbow',
+        value: 'white',
         choices: ['two-tone', 'white', 'black', 'random', 'black-white', 'rainbow'],
         listen: true
     },
@@ -23,6 +22,10 @@ let settingsGUI = {
         numberOfWaves: {
             value: 0,
             listen: true
+        },
+        autoMode: {
+            value: true,
+            listen: true,
         }
     },
     background: {
@@ -54,7 +57,7 @@ let settingsGUI = {
     wave: {
         speed: {
             display: 'range',
-            value: 0.3,
+            value: 0.02,
             min: -1,
             max: 1,
             step: 0.1,
@@ -69,10 +72,10 @@ let settingsGUI = {
             listen: true
         },
         add: {
-            value: function () { rectangleWave.addWaves(1); }
+            value: function () { rectangleWave.addWaves(1) }
         },
         remove: {
-            value: function () { rectangleWave.removeWaves(1); }
+            value: function () { rectangleWave.removeWaves(1) }
         },
         sides: {
             display: 'range',
@@ -96,13 +99,6 @@ let settingsGUI = {
             step: 0.1,
             listen: true
         }
-    },
-    music: {
-        play: {
-            value: function () { song.play(); }
-        },
-        stop: {
-            value: function () { song.stop(); }
-        }
     }
+
 }
