@@ -1,77 +1,138 @@
 class Form {
-    constructor(initialSpeed) {
-        this.color = [0, 0, 0];
+    constructor(initialSpeed, option = {}) {
+        this.color = [0, 0, 0]
+        this.hueValue = 0
+        this.hueIteration = 0
+        this.rotate = false
 
-        this.initialWidth = 0;
-        this.initialHeight = 0;
+        if (option.rotate) {
+            this.rotate = true
+        }
 
-        this.height = 0;
-        this.width = 0;
+        this.scaleValue = 0
+        this.scaleIteration = 0.0
+        this.scaleAnimation = scaleAnimationFunctions
 
-        this.scaleValue = 0;
-        this.scaleIteration = 0.0;
+        this.rotationValue = 0
+        this.rotateIteration = 0.0
+        this.rotateAnimation = rotateAnimationFunctions
 
-        this.rotationValue = 0;
-        this.rotationIteration = 0;
 
-        this.speed = initialSpeed;
-        this.lifespan = 0;
+        this.speed = initialSpeed
+        this.rotationSpeed = globalSettings.rotation.rotationSpeed
+        this.lifespan = 0
 
-        this.grayTone = random(255);
-        this.randomColor = color(random(255), 100, 100);
+        this.colorMode = globalSettings.colorMode
+        this.grayTone = random(255)
+        this.randomColor = color(random(255), 100, 100)
 
         this.weigth = globalSettings.wave.weigth
 
-        this.x = mouseX;
-        this.y = mouseY;
-
-        this.rotationSpeed = (globalSettings.rotation.rotationSpeed / 200);
+        this.minVariableX = rangeValues.minVariableX
+        this.maxVariableX = rangeValues.maxVariableX
     }
 
     refreshSpeed(speed) {
-        this.speed = speed;
+        this.speed = speed
     }
 
     move() {
-        this.lifespan++;
+        this.lifespan++
 
-        this.scaleValue = this.scaleIteration % 3000;
-        // this.scaleValue = (sin(this.scaleIteration / 4) * 100) + 10;
-        // this.scaleValue = Math.abs(sin(this.scaleIteration / 4) * 10) + 10;
+        let newScaleValue = 0
+        for (let [key, value] of this.scaleAnimation) {
+            if (value) {
+                switch (key) {
+                    case 'linear':
+                        newScaleValue += (this.scaleIteration)
+                        break
+                    case 'sin':
+                        newScaleValue += (sin(this.scaleIteration) * 10)
+                        break
+                    case 'cos':
+                        newScaleValue += (cos(this.scaleIteration) * 10) + 10
+                        break
+                    case 'abs':
+                        newScaleValue = Math.abs(newScaleValue)
+                        break
+                    case 'ease':
+                        newScaleValue = ease(this.scaleValue, newScaleValue * 2)
+                        break
+                    default:
+                        break
+                }
+            }
+        }
+        this.scaleValue = newScaleValue
 
-        this.rotationValue = this.rotationIteration % 360;
-        // this.rotationValue = (sin(this.rotationIteration / 4) * 10) + 10;
-        // this.rotationValue = Math.abs(sin(this.rotationIteration / 4) * 10) + 10;
+        let newRotateValue = 0
+        for (let [key, value] of this.rotateAnimation) {
+            if (value) {
+                switch (key) {
+                    case 'linear':
+                        newRotateValue += (this.rotateIteration % 100)
+                        break
+                    case 'sin':
+                        newRotateValue += (sin(this.rotateIteration) * 10)
+                        break
+                    case 'cos':
+                        newRotateValue += (cos(this.rotateIteration) * 10) + 10
+                        break
+                    case 'abs':
+                        newRotateValue = Math.abs(newRotateValue)
+                        break
+                    case 'ease':
+                        newRotateValue = ease(this.scaleValue, newRotateValue * 2)
+                        break
+                    default:
+                        break
+                }
+            }
+        }
+        this.rotateValue = newRotateValue
 
-        this.scaleIteration += globalSettings.wave.speed;
-        this.rotationIteration += globalSettings.rotation.rotationSpeed / 4;
+        this.scaleIteration += this.speed
+        this.rotateIteration += this.rotationSpeed
     }
 
     display() {
-        switch (globalSettings.colorMode) {
+        switch (this.colorMode) {
             case "two-tone":
                 if (isSoundActive) {
-                    stroke(color(spectrum[0], 255, 255));
+                    stroke(color(spectrum[0], 255, 255))
                 } else {
-                    stroke(color(100, 255, 255 - Math.abs(this.lifespan) % 255))
+                    stroke(color(283 - map(this.lifespan % 255, 0, 255, -30, 30), 255, 255))
                 }
                 break;
             case "white":
-                stroke(color(255, 0, 255));
+                stroke(color(255, 0, 255))
                 break;
             case "black":
-                stroke(color(255, 0, 0));
+                stroke(color(255, 0, 0))
                 break;
             case "random":
-                stroke(color((sin(this.scaleIteration / 4) * 255) + 10, 255, 255));
+                stroke(color((sin(this.scaleIteration / 4) * 255) + 10, 255, 255))
                 break;
             case "rainbow":
-                stroke(color(this.lifespan % 255, 255, 255));
+                this.hueValue = sin(this.hueIteration) * 20 + 10
+                this.hueIteration += 0.1
+                stroke(color(this.hueValue, 255, 255))
                 break;
             case "black-white":
-                stroke(color(0, 0, this.grayTone));
+                stroke(color(0, 0, this.grayTone))
             default:
-                break;
+                break
         }
+        rectMode(CENTER)
+        noFill()
+        push()
+        translate(width / 2, height / 2)
+
+        if (this.rotate) {
+            rotate(this.rotateValue)
+        }
+
+        scale(this.scaleValue)
+        strokeWeight(this.weigth)
     }
 }

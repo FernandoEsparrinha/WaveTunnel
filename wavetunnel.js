@@ -1,7 +1,7 @@
 p5.disableFriendlyErrors = true;
 
 function preload() {
-  // song = loadSound('assets/SocialConstruct.mp3');
+  // song = loadSound('assets/SocialConstruct.mp3')
   song = loadSound('assets/TameImpala.mp3')
 }
 
@@ -15,8 +15,9 @@ function setup() {
   if (isMobileDevice()) {
     createCanvas(windowWidth, windowHeight)
   } else {
-    createCanvas(windowWidth, windowHeight);
-    // createCanvas(1080, 1080);
+    createCanvas(windowWidth, windowHeight)
+    // createCanvas(1080, 1080)
+    // createCanvas(4096, 2160)
     // The following command will transform every frame captured by CCapture into an mp4 video
     // ffmpeg -r 30 -f image2 -s 1080x1080 -i "%07d.jpg" -vcodec libx264 -crf 17 -pix_fmt yuv420p output.mp4
     capturer = new CCapture({ format: 'jpg', framerate: 30, name: 'Wavetunnel-' + Date.now(), verbose: false })
@@ -42,8 +43,9 @@ function setup() {
 }
 
 function draw() {
-  colorMode(HSB);
-  background(globalSettings.background.hue, globalSettings.background.saturation, globalSettings.background.value);
+  if (focused) {
+    colorMode(HSB)
+    background(globalSettings.background.hue, globalSettings.background.saturation, globalSettings.background.value)
 
     if (isSoundActive) {
       drawSound()
@@ -61,9 +63,9 @@ function draw() {
   // let variation = 0.5 - (1 / Math.PI) * acos(cos(count * Math.PI));
   // globalSettings.rotation.rotationSpeed += ease(globalSettings.rotation.rotationSpeed, variation * 2);
   // globalSettings.wave.speed += ease(globalSettings.wave.speed, Math.abs(variation / 10));
+    rectangleWave.speed = globalSettings.wave.speed
+    rectangleWave.display()
 
-  rectangleWave.speed = globalSettings.wave.speed;
-  rectangleWave.display();
     if (isMobileDevice()) {
       drawMobile()
     } else {
@@ -75,5 +77,5 @@ function draw() {
 }
 
 function drawMobile() {
-  rectangleWave.addWaves(1, { rotate: true });
+  rectangleWave.addWaves(1, { rotate: true })
 }

@@ -1,7 +1,7 @@
 
 function setupGUI() {
-    var optionsGUI = { folded: isMobileDevice() };
-    globalSettings = guiGlue(settingsGUI, optionsGUI);
+    var optionsGUI = { folded: isMobileDevice() }
+    globalSettings = guiGlue(settingsGUI, optionsGUI)
 }
 
 let settingsGUI = {
@@ -22,6 +22,10 @@ let settingsGUI = {
         numberOfWaves: {
             value: 0,
             listen: true
+        },
+        autoMode: {
+            value: 0,
+            listen: true,
         }
     },
     background: {
@@ -68,10 +72,10 @@ let settingsGUI = {
             listen: true
         },
         add: {
-            value: function () { rectangleWave.addWaves(1); }
+            value: function () { rectangleWave.addWaves(1) }
         },
         remove: {
-            value: function () { rectangleWave.removeWaves(1); }
+            value: function () { rectangleWave.removeWaves(1) }
         },
         sides: {
             display: 'range',
