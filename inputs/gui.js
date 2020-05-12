@@ -24,7 +24,7 @@ let settingsGUI = {
             listen: true
         },
         autoMode: {
-            value: 0,
+            value: true,
             listen: true,
         }
     },
