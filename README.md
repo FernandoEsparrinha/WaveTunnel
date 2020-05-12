@@ -14,29 +14,6 @@ Visit [WaveTunnel](https://fernandopinto.github.io/WaveTunnel/) to check it out,
 
 In order to test audio the user needs to run p5-cli in order to instantiate p5 into node. Without this step the audio will not load.
 
-### Controls
-
-
-#### Arrow keys
-
-⬆️ adds rectangles
-
-⬇️ removes rectangles
-
-reduces speed ⬅️  ➡️ increases speed
-
-#### Color mode can be exchanged using the numerical keys
-
-**1** - Two-tone (currently still in development)
-
-**2** - White mode
-
-**3** - Random (currently still in development)
-
-**4** - Black & White
-
-**5** - Rainbow
-
 
 ## Roadmap
 
