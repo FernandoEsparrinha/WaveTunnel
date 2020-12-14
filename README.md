@@ -14,29 +14,6 @@ Visit [WaveTunnel](https://fernandoesparrinha.github.io/WaveTunnel/) to check it
 
 In order to test audio the user needs to run p5-cli in order to instantiate p5 into node. Without this step the audio will not load.
 
-### Controls
-
-
-#### Arrow keys
-
-⬆️ adds rectangles
-
-⬇️ removes rectangles
-
-reduces speed ⬅️  ➡️ increases speed
-
-#### Color mode can be exchanged using the numerical keys
-
-**1** - Two-tone (currently still in development)
-
-**2** - White mode
-
-**3** - Random (currently still in development)
-
-**4** - Black & White
-
-**5** - Rainbow
-
 
 ## Roadmap
 
@@ -72,6 +49,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * [GuiGlue](https://github.com/dmvaldman/guiGlue) - a dat.gui wrapper
 * [CCapture.js](https://github.com/spite/ccapture.js/) - a library that allows capturing the animation in order to create videos
 * [p5-cli](https://www.npmjs.com/package/p5-cli) - NPM package used in order to deploy p5 on node easily 
+* [osc.js](https://github.com/colinbdclark/osc.js) - a library that connects an OSC interface into Wavetunnel 
 
 ## Acknowledgments
 
