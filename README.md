@@ -7,7 +7,7 @@ The original ideia of the project was to represent a tunnel of light, where the 
 
 ## Getting Started
 
-Visit [WaveTunnel](https://fernandopinto.github.io/WaveTunnel/) to check it out, you can interact with the gui, with a midi controller or you can use the keyboard controls described below. 
+Visit [WaveTunnel](https://fernandoesparrinha.github.io/WaveTunnel/) to check it out, you can interact with the gui, with a midi controller or you can use the keyboard controls described below. 
 
 
 #### Audio experiments (work in progress)
