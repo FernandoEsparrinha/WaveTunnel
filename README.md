@@ -9,29 +9,25 @@ The original ideia of the project was to represent a tunnel of light, where the 
 
 ## Getting Started
 
-Visit [WaveTunnel](https://fernandoesparrinha.github.io/WaveTunnel/) to check it out, you can interact with the gui, with a midi controller or you can use the keyboard controls described below. 
+Visit [WaveTunnel](https://fernandoesparrinha.github.io/WaveTunnel/) to check it out, you can interact with the gui, with a midi controller or you can use the keyboard controls. 
 
+## Keyboard Controls 
 
-#### Audio experiments (work in progress)
+Your arrow keys control some basic WaveTunnel controls, by using up and down you control the creation of new shapes (the shape can be selected on the GUI).
+Your left and right arrow control the speed of the wave, speed can go from -1 to 1, meaning they can go forwards and backwards. If you handle the speed around -0.1 and 0.1 you can create some cool effects !
 
-In order to test audio the user needs to run p5-cli in order to instantiate p5 into node. Without this step the audio will not load.
+⚠️ Pro-tip
+> If you are having too much shapes on your screen and want to reset
+> you can press 0 in order to remove every shape from the screen.
 
+⬆️ - Adds shape
 
-## Roadmap
+⬇️ - Removes shape
 
-As a visual side project, consider this roadmap as a list of ideias that I possibly want to implement into WaveTunnel. So don't wait for the implementation of every feature described here.
+0 - Removes every shape
 
-- [x] Keyboard input
-- [x] Colour mode
-- [x] Demo version for mobile
-- [x] Mobile web app 
-- [x] Different shapes (at the moment only the rectangle is available) 
-- [x] Rotation of the shapes
-- [ ] Audio oscilators in order to create music with the experience
-- [x] GUI with inputs in order to not be restricted to the keyboard
-- [ ] Mouse cursor experience
-- [ ] Better mouse input
-- [ ] Changelog to replace this Roadmap
+reduces speed ⬅️  ➡️ increases speed
+
 
 <!-- ## Contributing
 
