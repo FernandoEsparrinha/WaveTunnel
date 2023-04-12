@@ -39,31 +39,7 @@ class Form {
     move() {
         this.lifespan++
 
-        let newScaleValue = 0
-        for (let [key, value] of this.scaleAnimation) {
-            if (value) {
-                switch (key) {
-                    case 'linear':
-                        newScaleValue += (this.scaleIteration)
-                        break
-                    case 'sin':
-                        newScaleValue += (sin(this.scaleIteration) * 10)
-                        break
-                    case 'cos':
-                        newScaleValue += (cos(this.scaleIteration) * 10) + 10
-                        break
-                    case 'abs':
-                        newScaleValue = Math.abs(newScaleValue)
-                        break
-                    case 'ease':
-                        newScaleValue = ease(this.scaleValue, newScaleValue * 2)
-                        break
-                    default:
-                        break
-                }
-            }
-        }
-        this.scaleValue = newScaleValue
+        activeAnimation(this);
 
         let newRotateValue = 0
         for (let [key, value] of this.rotateAnimation) {
@@ -91,7 +67,7 @@ class Form {
         }
         this.rotateValue = newRotateValue
 
-        this.scaleIteration += this.speed
+        this.scaleIteration += this.speed / 4
         this.rotateIteration += this.rotationSpeed
     }
 
