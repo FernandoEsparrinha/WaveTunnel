@@ -18,8 +18,6 @@ let rangeValues = {
     minVariableY: 100
 }
 
-let scaleAnimation = 'linear'
-let rotateAnimation = 'linear'
 let scaleAnimationFunctions = new Map()
 scaleAnimationFunctions.set('linear', true)
 scaleAnimationFunctions.set('sin', false)
@@ -36,6 +34,6 @@ rotateAnimationFunctions.set('ease', false)
 
 let isSoundActive = 0
 let isGuiActive = 1
-let isWebMidiActive = 1
+let isWebMidiActive = 0
 let isOscActive = 0
 let isRecording = 0
