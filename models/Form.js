@@ -30,6 +30,8 @@ class Form {
 
         this.minVariableX = rangeValues.minVariableX
         this.maxVariableX = rangeValues.maxVariableX
+
+        changeAnimation(globalSettings.wave.animation)
     }
 
     refreshSpeed(speed) {

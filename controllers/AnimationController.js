@@ -1,8 +1,8 @@
 const animations = {
     linear: (form) => { form.scaleValue += form.scaleIteration },
-    sin: (form) => { form.scaleValue += sin(this.scaleIteration) * 10 },
-    cos: (form) => { form.scaleValue += cos(this.scaleIteration) * 10 + 10 },
-    abs: (form) => { form.scaleValue += Math.abs(this.scaleValue) },
+    sin: (form) => { form.scaleValue += sin(form.scaleIteration) },
+    cos: (form) => { form.scaleValue += cos(form.scaleIteration) },
+    abs: (form) => { form.scaleValue += Math.abs(form.scaleValue) },
     ease: (form) => { form.scaleValue = ease(form.scaleValue, form.scaleValue * 2) }
 }
 

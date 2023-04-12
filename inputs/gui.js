@@ -55,6 +55,12 @@ let settingsGUI = {
         }
     },
     wave: {
+        animation: {
+            display: 'selector',
+            value: 'sin',
+            choices: ['linear', 'sin', 'cos', 'abs', 'ease'],
+            listen: true
+        },
         speed: {
             display: 'range',
             value: 0.02,
