@@ -36,6 +36,6 @@ rotateAnimationFunctions.set('ease', false)
 
 let isSoundActive = 0
 let isGuiActive = 1
-let isWebMidiActive = 0
-let isOscActive = 1
+let isWebMidiActive = 1
+let isOscActive = 0
 let isRecording = 0

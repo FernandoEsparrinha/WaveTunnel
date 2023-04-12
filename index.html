@@ -36,18 +36,19 @@
   <script src="libraries/p5.sound.js"></script>
   <script src="libraries/quicksettings.js"></script>
   <script src="libraries/CCapture.all.min.js"></script>
-  <script src="server/node_modules/osc/dist/osc-browser.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/webmidi"></script>
+  <!-- <script src="server/node_modules/osc/dist/osc-browser.js"></script> -->
+  <script> var exports = {}; </script>
+  <!-- <script src="libraries/webmidi.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/webmidi@latest/dist/iife/webmidi.iife.js"></script>
 
   <script src="libraries/datgui/dat.gui.min.js" type="text/javascript"></script>
   <script src="libraries/datgui/dat.color.min.js" type="text/javascript"></script>
   <script src="libraries/datgui/guiGlue.js" type="text/javascript"></script>
 
-  <script src="wavetunnel.js"></script>
 
   <script src="inputs/keyboard.js"></script>
   <script src="inputs/mouse.js"></script>
-  <script src="inputs/webmidi.js"></script>
+  <script src="inputs/webmidiController.js"></script>
   <script src="inputs/osc.js"></script>
   <script src="inputs/gui.js"></script>
   <script src="inputs/sound.js"></script>
@@ -71,6 +72,7 @@
   <script src="models/TextWave.js"></script>
   <script src="models/LineWave.js"></script>
 
+  <script src="wavetunnel.js"></script>
 </head>
 
 <body>

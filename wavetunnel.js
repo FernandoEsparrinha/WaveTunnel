@@ -30,7 +30,8 @@ function setup() {
     setupGUI()
   }
   if (isWebMidiActive) {
-    setupWebMidi()
+    //setupWebMidi()
+    webMidiController()
   }
   if (isOscActive) {
     setupOsc()
