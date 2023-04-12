@@ -1,6 +1,6 @@
 
 
-function webMidiController() {
+function WebMidiController() {
     WebMidi
         .enable()
         .then(onEnabled)

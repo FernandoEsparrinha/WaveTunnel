@@ -31,7 +31,7 @@ function setup() {
   }
   if (isWebMidiActive) {
     //setupWebMidi()
-    webMidiController()
+    WebMidiController()
   }
   if (isOscActive) {
     setupOsc()
