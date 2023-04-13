@@ -46,7 +46,7 @@ function setup() {
 
   // rectangleWave = new LineWave()
   // TODO : Create WaveController in order to manage wave
-  rectangleWave = new PolygonWave()
+  rectangleWave = activeWave()
   // rectangleWave = new TextWave()
 }
 

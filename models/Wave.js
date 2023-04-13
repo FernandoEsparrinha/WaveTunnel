@@ -1,7 +1,7 @@
 class Wave {
   constructor() {
 
-    this.individualMode = false
+    this.individualMode = true
     this.maxForms = 500
     this.initialWaves = 1
     this.waves = []
