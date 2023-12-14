@@ -97,6 +97,12 @@ let settingsGUI = {
             value: true,
             listen: true
         },
+        animation: {
+            display: 'selector',
+            value: 'sin',
+            choices: ['linear', 'sin', 'cos', 'abs', 'ease'],
+            listen: true
+        },
         rotationSpeed: {
             display: 'range',
             value: 0.3,
