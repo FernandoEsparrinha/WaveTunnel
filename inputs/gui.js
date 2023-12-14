@@ -78,7 +78,7 @@ let settingsGUI = {
             listen: true
         },
         add: {
-            value: function () { rectangleWave.addWaves(1) }
+            value: function () { rectangleWave.addWaves(1, { rotate: globalSettings.rotation.rotate }) }
         },
         remove: {
             value: function () { rectangleWave.removeWaves(1) }

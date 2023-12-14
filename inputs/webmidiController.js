@@ -64,19 +64,19 @@ function onEnabled() {
                 console.log(e)
 
                 if (e.note.name == "G" && e.note.octave == "2") {
-                    rectangleWave.addWaves(1);
+                    rectangleWave.addWaves(1, { rotate: globalSettings.rotation.rotate });
                 }
                 if (e.note.name == "D#" && e.note.octave == "2") {
                     rectangleWave.removeWaves(1);
                 }
                 if (e.note.name == "F#" && e.note.octave == "2") {
-                    rectangleWave.addWaves(10);
+                    rectangleWave.addWaves(10, { rotate: globalSettings.rotation.rotate });
                 }
                 if (e.note.name == "D" && e.note.octave == "2") {
                     rectangleWave.removeWaves(10);
                 }
                 if (e.note.name == "F" && e.note.octave == "2") {
-                    rectangleWave.addWaves(100);
+                    rectangleWave.addWaves(100, { rotate: globalSettings.rotation.rotate });
                 }
                 if (e.note.name == "C#" && e.note.octave == "2") {
                     rectangleWave.removeWaves(100);

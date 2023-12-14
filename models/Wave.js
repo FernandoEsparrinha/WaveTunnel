@@ -9,7 +9,7 @@ class Wave {
     this.initialSpeed = 0.1
     this.speed = this.initialSpeed
 
-    console.log("Creating Rectangle Wave")
+    console.log("Creating Wave")
     console.log(this)
   }
 

@@ -78,11 +78,9 @@ function draw() {
     keyboardWaveControl()
     // storeItem('settings', globalSettings)
     // storeItem('variables', rangeValues)
-    // storeItem('scaleAnimationFunctions', scaleAnimationFunctions)
-    // storeItem('rotateAnimationFunctions', rotateAnimationFunctions)
   }
 }
 
 function drawMobile() {
-  rectangleWave.addWaves(1, { rotate: true })
+  rectangleWave.addWaves(1, { rotate: globalSettings.rotation.rotate })
 }

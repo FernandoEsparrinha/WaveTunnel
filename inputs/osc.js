@@ -73,16 +73,6 @@ function setupOsc() {
                     break
             }
         }
-        if (address.startsWith("wave/scale")) {
-            if (!args[0]) {
-                scaleAnimationFunctions.set(address.substring('wave/scale/'.length), args[1])
-            }
-        }
-        if (address.startsWith("wave/rotate")) {
-            if (!args[0]) {
-                rotateAnimationFunctions.set(address.substring('wave/rotate/'.length), args[1])
-            }
-        }
 
         if (address.startsWith("background")) {
             var component = address.substring('background/'.length)

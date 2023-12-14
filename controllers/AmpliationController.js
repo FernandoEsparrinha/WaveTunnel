@@ -1,4 +1,4 @@
-const animations = {
+const ampliationFunctions = {
     linear: (form) => { form.scaleValue += form.scaleIteration },
     sin: (form) => { form.scaleValue += sin(form.scaleIteration) },
     cos: (form) => { form.scaleValue += cos(form.scaleIteration) },
@@ -6,12 +6,12 @@ const animations = {
     ease: (form) => { form.scaleValue = ease(form.scaleValue, form.scaleValue * 2) }
 }
 
-let activeAnimation = animations.linear;
+let activeAmpliation = ampliationFunctions.linear;
 
-function changeAnimation(animationName) {
-    if (animations.hasOwnProperty(animationName)) {
-        activeAnimation = animations[animationName];
+function changeAmpliation(FunctionName) {
+    if (ampliationFunctions.hasOwnProperty(FunctionName)) {
+        activeAmpliation = ampliationFunctions[FunctionName];
     } else {
-        console.error(`AnimationController - Invalid animation name: ${animationName}`);
+        console.error(`AmpliationController - Invalid function name: ${FunctionName}`);
     }
 }

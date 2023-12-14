@@ -41,7 +41,7 @@ function keyTyped() {
 
 function keyboardWaveControl() {
   if (keyIsDown(UP_ARROW)) {
-    rectangleWave.addWaves(1);
+    rectangleWave.addWaves(1, { rotate: globalSettings.rotation.rotate });
   }
   if (keyIsDown(DOWN_ARROW)) {
     rectangleWave.removeWaves(1);

@@ -11,15 +11,13 @@ class Form {
 
         this.scaleValue = 0
         this.scaleIteration = 0.0
-        this.scaleAnimation = scaleAnimationFunctions
 
         this.rotationValue = 0
-        this.rotateIteration = 0.0
-        this.rotateAnimation = rotateAnimationFunctions
+        this.rotationIteration = 0.0
 
 
         this.speed = initialSpeed
-        this.rotationSpeed = globalSettings.rotation.rotationSpeed
+        this.rotationSpeed = globalSettings.rotation.rotationSpeed * 100
         this.lifespan = 0
 
         this.colorMode = globalSettings.colorMode
@@ -31,7 +29,7 @@ class Form {
         this.minVariableX = rangeValues.minVariableX
         this.maxVariableX = rangeValues.maxVariableX
 
-        changeAnimation(globalSettings.wave.animation)
+        changeAmpliation(globalSettings.wave.animation)
     }
 
     refreshSpeed(speed) {
@@ -41,36 +39,10 @@ class Form {
     move() {
         this.lifespan++
 
-        activeAnimation(this);
-
-        let newRotateValue = 0
-        for (let [key, value] of this.rotateAnimation) {
-            if (value) {
-                switch (key) {
-                    case 'linear':
-                        newRotateValue += (this.rotateIteration % 100)
-                        break
-                    case 'sin':
-                        newRotateValue += (sin(this.rotateIteration) * 10)
-                        break
-                    case 'cos':
-                        newRotateValue += (cos(this.rotateIteration) * 10) + 10
-                        break
-                    case 'abs':
-                        newRotateValue = Math.abs(newRotateValue)
-                        break
-                    case 'ease':
-                        newRotateValue = ease(this.scaleValue, newRotateValue * 2)
-                        break
-                    default:
-                        break
-                }
-            }
-        }
-        this.rotateValue = newRotateValue
-
+        activeAmpliation(this);
+        activeRotation(this);
         this.scaleIteration += this.speed / 4
-        this.rotateIteration += this.rotationSpeed
+        this.rotationIteration += this.rotationSpeed / 4
     }
 
     display() {
@@ -107,7 +79,7 @@ class Form {
         translate(width / 2, height / 2)
 
         if (this.rotate) {
-            rotate(this.rotateValue)
+            rotate(this.rotationValue)
         }
 
         scale(this.scaleValue)
