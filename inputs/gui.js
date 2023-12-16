@@ -24,7 +24,7 @@ let settingsGUI = {
             listen: true
         },
         autoMode: {
-            value: true,
+            value: false,
             listen: true,
         }
     },
@@ -78,10 +78,10 @@ let settingsGUI = {
             listen: true
         },
         add: {
-            value: function () { rectangleWave.addWaves(1, { rotate: globalSettings.rotation.rotate }) }
+            value: function () { activeWave.addWaves(1, { rotate: globalSettings.rotation.rotate }) }
         },
         remove: {
-            value: function () { rectangleWave.removeWaves(1) }
+            value: function () { activeWave.removeWaves(1) }
         },
         sides: {
             display: 'range',

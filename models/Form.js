@@ -17,8 +17,9 @@ class Form {
 
 
         this.speed = initialSpeed
-        this.rotationSpeed = globalSettings.rotation.rotationSpeed * 100
+        this.rotationSpeed = globalSettings.rotation.rotationSpeed / 40
         this.lifespan = 0
+
 
         this.colorMode = globalSettings.colorMode
         this.grayTone = random(255)

@@ -31,14 +31,14 @@ function setupOsc() {
                     break
                 case "add":
                     if (!args[0])
-                        rectangleWave.addWaves(1, { rotate: globalSettings.rotation.rotate })
+                        activeWave.addWaves(1, { rotate: globalSettings.rotation.rotate })
                     break
                 case "remove":
                     if (!args[0])
-                        rectangleWave.removeWaves(1)
+                        activeWave.removeWaves(1)
                     break
                 case "reset":
-                    rectangleWave.reset()
+                    activeWave.reset()
                     break
                 case "weight":
                     globalSettings.wave.weigth = map(args[0], 0, 1, 0.001, 0.5)

@@ -19,7 +19,7 @@ function keyTyped() {
     song.play();
   }
   if (keyCode === 32) {
-    rectangleWave.reset();
+    activeWave.reset();
   }
 
   if (keyCode === 13) {
@@ -41,10 +41,10 @@ function keyTyped() {
 
 function keyboardWaveControl() {
   if (keyIsDown(UP_ARROW)) {
-    rectangleWave.addWaves(1, { rotate: globalSettings.rotation.rotate });
+    activeWave.addWaves(1, { rotate: globalSettings.rotation.rotate });
   }
   if (keyIsDown(DOWN_ARROW)) {
-    rectangleWave.removeWaves(1);
+    activeWave.removeWaves(1);
   }
   if (keyIsDown(LEFT_ARROW)) {
     globalSettings.wave.speed -= 0.01;

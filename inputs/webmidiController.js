@@ -29,32 +29,34 @@ function onEnabled() {
             function (e) {
                 console.log(e.data[1])
 
-                // BACKGROUND COLOR
-                if (e.data[1] == 70) {
-                    globalSettings.background.hue = map(e.data[2], 0, 127, 0, 255);
-                }
-                if (e.data[1] == 71) {
-                    globalSettings.background.saturation = map(e.data[2], 0, 127, 0, 255);
-                }
-                if (e.data[1] == 72) {
-                    globalSettings.background.value = map(e.data[2], 0, 127, 0, 255);
-                }
-
-                // WAVE CONTROL
-                if (e.data[1] == 74) {
-                    globalSettings.wave.speed = map(e.data[2], 0, 127, -1, 1);
-                }
-
-                if (e.data[1] == 75) {
-                    globalSettings.wave.sides = Math.round(map(e.data[2], 0, 127, 3, 10));
-                }
-
-                if (e.data[1] == 76) {
-                    globalSettings.wave.weigth = map(e.data[2], 0, 127, 0.01, 1);
-                }
-
-                if (e.data[1] == 77) {
-                    globalSettings.rotation.rotationSpeed = map(e.data[2], 0, 127, -1, 1);
+                switch (e.data[1]) {
+                    // BACKGROUND COLOR
+                    case 70:
+                        globalSettings.background.hue = map(e.data[2], 0, 127, 0, 255);
+                        break;
+                    case 71:
+                        globalSettings.background.saturation = map(e.data[2], 0, 127, 0, 255);
+                        break;
+                    case 72:
+                        globalSettings.background.value = map(e.data[2], 0, 127, 0, 255);
+                        break;
+                    case 73:
+                        break;
+                    // WAVE CONTROL
+                    case 74:
+                        globalSettings.wave.speed = map(e.data[2], 0, 127, -1, 1);
+                        break;
+                    case 75:
+                        globalSettings.rotation.rotationSpeed = map(e.data[2], 0, 127, -1, 1);
+                        break;
+                    case 76:
+                        globalSettings.wave.weigth = map(e.data[2], 0, 127, 0.01, 1);
+                        break;
+                    case 77:
+                        globalSettings.wave.sides = Math.round(map(e.data[2], 0, 127, 3, 10));
+                        break;
+                    default:
+                        break;
                 }
             }
         );
@@ -62,27 +64,47 @@ function onEnabled() {
         input.addListener('noteon', "all",
             function (e) {
                 console.log(e)
+                /* console.log("Note " + e.note.name)
+                console.log("Accidental " + e.note.accidental)
+                console.log("Octaßve " + e.note.octave) */
 
-                if (e.note.name == "G" && e.note.octave == "2") {
-                    rectangleWave.addWaves(1, { rotate: globalSettings.rotation.rotate });
-                }
-                if (e.note.name == "D#" && e.note.octave == "2") {
-                    rectangleWave.removeWaves(1);
-                }
-                if (e.note.name == "F#" && e.note.octave == "2") {
-                    rectangleWave.addWaves(10, { rotate: globalSettings.rotation.rotate });
-                }
-                if (e.note.name == "D" && e.note.octave == "2") {
-                    rectangleWave.removeWaves(10);
-                }
-                if (e.note.name == "F" && e.note.octave == "2") {
-                    rectangleWave.addWaves(100, { rotate: globalSettings.rotation.rotate });
-                }
-                if (e.note.name == "C#" && e.note.octave == "2") {
-                    rectangleWave.removeWaves(100);
-                }
-                if (e.note.name == "C" && e.note.octave == "2") {
-                    globalSettings.rotation.rotate = !globalSettings.rotation.rotate;
+                switch (e.note.name) {
+                    case "A":
+                        break
+                    case "B":
+                        break
+                    case "C":
+                        if (e.note.accidental == "#") {
+                            activeWave.removeWaves(100)
+                        } else {
+                            globalSettings.rotation.rotate = !globalSettings.rotation.rotate
+                        }
+                        break
+                    case "D":
+                        if (e.note.accidental == "#") {
+                            activeWave.removeWaves(1)
+                        } else {
+                            activeWave.removeWaves(10)
+                        }
+                        break
+                    case "E":
+                        if (e.note.accidental == "#") {
+                        } else {
+                            globalSettings.settings.autoMode = !globalSettings.settings.autoMode
+                        }
+                        break
+                    case "F":
+                        if (e.note.accidental == "#") {
+                            activeWave.addWaves(10, { rotate: globalSettings.rotation.rotate })
+                        } else {
+                            activeWave.addWaves(100, { rotate: globalSettings.rotation.rotate })
+                        }
+                        break
+                    case "G":
+                        activeWave.addWaves(1, { rotate: globalSettings.rotation.rotate })
+                        break
+                    default:
+                        break
                 }
             }
         )

@@ -15,10 +15,14 @@ function setup() {
   if (isMobileDevice()) {
     createCanvas(windowWidth, windowHeight)
   } else {
-    createCanvas(windowWidth, windowHeight)
+    // createCanvas(windowWidth, windowHeight)
     // createCanvas(1080, 1080)
-    // createCanvas(1080, 1920)
-    // The following command will transform every frame captured by CCapture into an mp4 video
+    createCanvas(1080, 1920)
+
+    // Command to unzip the frames from the .tar archive
+    // tar -xvf Wavetunnelxyz.tar
+
+    // Command to transform every frame captured by CCapture into an mp4 video
     // ffmpeg -r 30 -f image2 -s 1080x1920 -i "%07d.jpg" -vcodec libx264 -crf 17 -pix_fmt yuv420p output.mp4
     capturer = new CCapture({ format: 'jpg', framerate: 30, name: 'Wavetunnel-' + Date.now(), verbose: false })
   }
@@ -44,10 +48,10 @@ function setup() {
   //   rangeValues = getItem('variables')
   // }
 
-  // rectangleWave = new LineWave()
+  // activeWave = new LineWave()
   // TODO : Create WaveController in order to manage wave
-  rectangleWave = activeWave()
-  // rectangleWave = new TextWave()
+  activeWave = activeWave()
+  // activeWave = new TextWave()
 }
 
 function draw() {
@@ -60,14 +64,14 @@ function draw() {
     }
 
     globalSettings.settings.fps = frameRate().toFixed(2)
-    globalSettings.settings.numberOfWaves = rectangleWave.waves.length
+    globalSettings.settings.numberOfWaves = activeWave.waves.length
 
     if (globalSettings.settings.autoMode) {
-      rectangleWave.addWaves(1, { rotate: globalSettings.rotation.rotate })
+      activeWave.addWaves(1, { rotate: globalSettings.rotation.rotate })
     }
 
-    rectangleWave.speed = globalSettings.wave.speed
-    rectangleWave.display()
+    activeWave.speed = globalSettings.wave.speed / 4
+    activeWave.display()
 
     if (isMobileDevice()) {
       drawMobile()
@@ -82,5 +86,5 @@ function draw() {
 }
 
 function drawMobile() {
-  rectangleWave.addWaves(1, { rotate: globalSettings.rotation.rotate })
+  activeWave.addWaves(1, { rotate: globalSettings.rotation.rotate })
 }

@@ -1,4 +1,3 @@
-let rectangleWave
 
 let translateX = 0
 let translateY = 0
@@ -20,6 +19,6 @@ let rangeValues = {
 
 let isSoundActive = 0
 let isGuiActive = 1
-let isWebMidiActive = 0
+let isWebMidiActive = 1
 let isOscActive = 0
 let isRecording = 0
