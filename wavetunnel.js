@@ -2,7 +2,7 @@ p5.disableFriendlyErrors = true;
 
 function preload() {
   // song = loadSound('assets/SocialConstruct.mp3')
-  song = loadSound('assets/TameImpala.mp3')
+  // song = loadSound('assets/TameImpala.mp3')
 }
 
 function setup() {
@@ -15,9 +15,9 @@ function setup() {
   if (isMobileDevice()) {
     createCanvas(windowWidth, windowHeight)
   } else {
-    // createCanvas(windowWidth, windowHeight)
+    createCanvas(windowWidth, windowHeight)
     // createCanvas(1080, 1080)
-    createCanvas(1080, 1920)
+    // createCanvas(1920, 1080)
 
     // Command to unzip the frames from the .tar archive
     // tar -xvf Wavetunnelxyz.tar
