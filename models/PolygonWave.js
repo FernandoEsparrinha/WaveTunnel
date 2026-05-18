@@ -1,7 +1,8 @@
 class PolygonWave extends Wave {
-  constructor() {
+  constructor(initialWaves = 1) {
     super();
     this.lifespan = 0;
+    this.initialWaves = initialWaves;
     for (let i = 0; i < this.initialWaves; i++) {
       this.waves.push(new Polygon(this.speed));
     }

@@ -2,6 +2,21 @@
 function setupGUI() {
     var optionsGUI = { folded: isMobileDevice() }
     globalSettings = guiGlue(settingsGUI, optionsGUI)
+    randomizeSettings()
+}
+
+function randomizeSettings() {
+    globalSettings.colorMode = random(settingsGUI.colorMode.choices)
+    globalSettings.wave.animation = random(settingsGUI.wave.animation.choices)
+    globalSettings.rotation.animation = random(settingsGUI.rotation.animation.choices)
+    globalSettings.background.hue = random(settingsGUI.background.hue.min, settingsGUI.background.hue.max)
+    globalSettings.background.saturation = random(settingsGUI.background.saturation.min, settingsGUI.background.saturation.max)
+    globalSettings.background.value = random(settingsGUI.background.value.min, settingsGUI.background.value.max)
+    globalSettings.wave.speed = random(settingsGUI.wave.speed.min, globalSettings.wave.speed.max).toFixed(2)
+    globalSettings.wave.weigth = random(0,1).toFixed(2)
+    globalSettings.wave.sides = random(3, 10).toFixed(0)
+    globalSettings.rotation.rotationSpeed = random(globalSettings.rotation.rotationSpeed.min, globalSettings.rotation.rotationSpeed.max)
+    globalSettings.settings.autoMode = true
 }
 
 let settingsGUI = {
@@ -58,7 +73,7 @@ let settingsGUI = {
         animation: {
             display: 'selector',
             value: 'sin',
-            choices: ['linear', 'sin', 'cos', 'abs', 'ease'],
+            choices: ['linear', 'sin', 'cos'],
             listen: true
         },
         speed: {

@@ -12,10 +12,8 @@ function setup() {
   print("https://github.com/FernandoPinto/WaveTunnel ")
   console.groupEnd()
 
-  if (isMobileDevice()) {
-    createCanvas(windowWidth, windowHeight)
-  } else {
-    createCanvas(windowWidth, windowHeight)
+  createCanvas(windowWidth, windowHeight)
+  if (!isMobileDevice()) {
     // createCanvas(1080, 1080)
     // createCanvas(1920, 1080)
 

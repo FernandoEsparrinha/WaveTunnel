@@ -41,10 +41,10 @@ class Form {
     move() {
         this.lifespan++
 
-        activeAmpliation(this);
-        activeRotation(this);
-        this.scaleIteration += this.speed / 4
-        this.rotationIteration += this.rotationSpeed / 4
+        activeAmpliation(this)
+        activeRotation(this)
+        this.scaleIteration += this.speed / 10
+        this.rotationIteration += this.rotationSpeed / 10
     }
 
     display() {
