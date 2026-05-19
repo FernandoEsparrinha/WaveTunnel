@@ -31,6 +31,7 @@
     }
   </style>
 
+  <!-- Libraries -->
   <script src="libraries/p5.js"></script>
   <script src="libraries/p5.dom.js"></script>
   <script src="libraries/p5.sound.js"></script>
@@ -45,34 +46,42 @@
   <script src="libraries/datgui/dat.color.min.js" type="text/javascript"></script>
   <script src="libraries/datgui/guiGlue.js" type="text/javascript"></script>
 
+  <!-- Configuration & Helpers (load first, needed by everything) -->
+  <script src="config.js"></script>
+  <script src="helpers/functions.js"></script>
+  <script src="helpers/variables.js"></script>
 
+  <!-- Model Classes (base classes first) -->
+  <script src="models/Form.js"></script>
+  <script src="models/Wave.js"></script>
+
+  <!-- Concrete Shape Classes -->
+  <script src="models/Rectangle.js"></script>
+  <script src="models/Line.js"></script>
+  <script src="models/Polygon.js"></script>
+  <script src="models/Hourglass.js"></script>
+  <script src="models/TextForm.js"></script>
+
+  <!-- Wave Visualizations -->
+  <script src="models/RectangleWave.js"></script>
+  <script src="models/LineWave.js"></script>
+  <script src="models/PolygonWave.js"></script>
+  <script src="models/HourglassWave.js"></script>
+  <script src="models/TextWave.js"></script>
+
+  <!-- Controllers -->
   <script src="controllers/AmpliationController.js"></script>
   <script src="controllers/RotationController.js"></script>
   <script src="controllers/WaveController.js"></script>
+
+  <!-- Input Handlers & GUI -->
   <script src="inputs/keyboard.js"></script>
   <script src="inputs/mouse.js"></script>
-  <!-- <script src="inputs/WebmidiController.js"></script> -->
   <script src="inputs/osc.js"></script>
-  <script src="inputs/gui.js"></script>
   <script src="inputs/sound.js"></script>
+  <script src="inputs/gui.js"></script>
 
-  <script src="models/Wave.js"></script>
-  <script src="models/Form.js"></script>
-
-  <script src="models/Rectangle.js"></script>
-  <script src="models/Hourglass.js"></script>
-  <script src="models/Polygon.js"></script>
-  <script src="models/TextForm.js"></script>
-  <script src="models/Line.js"></script>
-
-  <script src="models/RectangleWave.js"></script>
-  <script src="models/HourglassWave.js"></script>
-  <script src="models/PolygonWave.js"></script>
-  <script src="models/TextWave.js"></script>
-  <script src="models/LineWave.js"></script>
-
-  <script src="helpers/functions.js"></script>
-  <script src="helpers/variables.js"></script>
+  <!-- Main Sketch (loads last) -->
   <script src="wavetunnel.js"></script>
 </head>
 

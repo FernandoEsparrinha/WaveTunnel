@@ -1,4 +1,3 @@
-
 let translateX = 0
 let translateY = 0
 
@@ -9,7 +8,6 @@ let song, fft
 
 let globalSettings
 
-
 let rangeValues = {
     maxVariableX: 0,
     minVariableX: 100,
@@ -17,8 +15,8 @@ let rangeValues = {
     minVariableY: 100
 }
 
-let isSoundActive = 0
-let isGuiActive = 1
-let isWebMidiActive = 0
-let isOscActive = 0
-let isRecording = 0
+let isSoundActive = FEATURE_FLAGS.SOUND_ACTIVE
+let isGuiActive = FEATURE_FLAGS.GUI_ACTIVE
+let isWebMidiActive = FEATURE_FLAGS.WEBMIDI_ACTIVE
+let isOscActive = FEATURE_FLAGS.OSC_ACTIVE
+let isRecording = FEATURE_FLAGS.RECORDING_ACTIVE

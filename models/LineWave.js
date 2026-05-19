@@ -29,10 +29,7 @@ class LineWave extends Wave {
         this.waves[i].refreshSpeed(this.speed)
       }
 
-
-      if (this.waves.length == 300) {
-        this.removeWaves(1)
-      }
+      this.enforceMaxWaves()
 
       this.waves[i].move()
       this.waves[i].display()

@@ -30,7 +30,7 @@ class Hourglass extends Form {
         if (globalSettings.rotation.rotate) {
             rotate(this.lifespan * this.rotationSpeed)
         }
-        strokeWeight(this.weigth)
+        strokeWeight(this.weight)
         drawHourglass()
         pop()
     }

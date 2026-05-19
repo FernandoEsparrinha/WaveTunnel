@@ -1,17 +1,17 @@
 const ampliationFunctions = {
-    linear: (form) => { form.scaleValue += form.scaleIteration },
-    sin: (form) => { form.scaleValue += sin(form.scaleIteration) },
-    cos: (form) => { form.scaleValue += cos(form.scaleIteration) },
-    abs: (form) => { form.scaleValue += Math.abs(form.scaleValue) },
-    ease: (form) => { form.scaleValue = ease(form.scaleValue, form.scaleValue * 2) }
+    [ANIMATION_FUNCTIONS.LINEAR]: (form) => { form.scaleValue += form.scaleIteration },
+    [ANIMATION_FUNCTIONS.SIN]: (form) => { form.scaleValue += sin(form.scaleIteration) },
+    [ANIMATION_FUNCTIONS.COS]: (form) => { form.scaleValue += cos(form.scaleIteration) },
+    [ANIMATION_FUNCTIONS.ABS]: (form) => { form.scaleValue += Math.abs(form.scaleIteration) },
+    [ANIMATION_FUNCTIONS.EASE]: (form) => { form.scaleValue = ease(form.scaleValue, form.scaleIteration * 8) }
 }
 
-let activeAmpliation = ampliationFunctions.linear;
+let activeAmpliation = ampliationFunctions[ANIMATION_FUNCTIONS.LINEAR]
 
-function changeAmpliation(FunctionName) {
-    if (ampliationFunctions.hasOwnProperty(FunctionName)) {
-        activeAmpliation = ampliationFunctions[FunctionName];
+function changeAmpliation(functionName) {
+    if (ampliationFunctions.hasOwnProperty(functionName)) {
+        activeAmpliation = ampliationFunctions[functionName]
     } else {
-        console.error(`AmpliationController - Invalid function name: ${FunctionName}`);
+        console.error(`AmpliationController - Invalid function name: ${functionName}. Available: ${Object.keys(ampliationFunctions).join(', ')}`)
     }
 }

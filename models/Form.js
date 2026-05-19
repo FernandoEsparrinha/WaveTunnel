@@ -25,7 +25,7 @@ class Form {
         this.grayTone = random(255)
         this.randomColor = color(random(255), 100, 100)
 
-        this.weigth = globalSettings.wave.weigth
+        this.weight = globalSettings.wave.weight
 
         this.minVariableX = rangeValues.minVariableX
         this.maxVariableX = rangeValues.maxVariableX
@@ -85,6 +85,6 @@ class Form {
         }
 
         scale(this.scaleValue)
-        strokeWeight(this.weigth)
+        strokeWeight(this.weight)
     }
 }

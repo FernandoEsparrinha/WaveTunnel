@@ -13,7 +13,7 @@ function randomizeSettings() {
     globalSettings.background.saturation = random(settingsGUI.background.saturation.min, settingsGUI.background.saturation.max)
     globalSettings.background.value = random(settingsGUI.background.value.min, settingsGUI.background.value.max)
     globalSettings.wave.speed = random(settingsGUI.wave.speed.min, globalSettings.wave.speed.max).toFixed(2)
-    globalSettings.wave.weigth = random(0,1).toFixed(2)
+    globalSettings.wave.weight = random(0, 1).toFixed(2)
     globalSettings.wave.sides = random(3, 10).toFixed(0)
     globalSettings.rotation.rotationSpeed = random(globalSettings.rotation.rotationSpeed.min, globalSettings.rotation.rotationSpeed.max)
     globalSettings.settings.autoMode = true
@@ -22,13 +22,13 @@ function randomizeSettings() {
 let settingsGUI = {
     colorMode: {
         display: 'selector',
-        value: 'white',
-        choices: ['two-tone', 'white', 'black', 'random', 'black-white', 'rainbow'],
+        value: COLOR_CONFIG.DEFAULT_MODE,
+        choices: COLOR_CONFIG.COLOR_MODES,
         listen: true
     },
     settings: {
         version: {
-            value: "1.3.3"
+            value: VERSION
         },
         fps: {
             value: 0,
@@ -46,7 +46,7 @@ let settingsGUI = {
     background: {
         hue: {
             display: 'range',
-            value: 0,
+            value: BACKGROUND_DEFAULTS.HUE,
             min: 0,
             max: 255,
             step: 1,
@@ -54,7 +54,7 @@ let settingsGUI = {
         },
         saturation: {
             display: 'range',
-            value: 0,
+            value: BACKGROUND_DEFAULTS.SATURATION,
             min: 0,
             max: 255,
             step: 1,
@@ -62,7 +62,7 @@ let settingsGUI = {
         },
         value: {
             display: 'range',
-            value: 0,
+            value: BACKGROUND_DEFAULTS.VALUE,
             min: 0,
             max: 255,
             step: 1,
@@ -72,21 +72,21 @@ let settingsGUI = {
     wave: {
         animation: {
             display: 'selector',
-            value: 'sin',
-            choices: ['linear', 'sin', 'cos'],
+            value: ANIMATION_FUNCTIONS.SIN,
+            choices: [ANIMATION_FUNCTIONS.LINEAR, ANIMATION_FUNCTIONS.SIN, ANIMATION_FUNCTIONS.COS, ANIMATION_FUNCTIONS.ABS, ANIMATION_FUNCTIONS.EASE],
             listen: true
         },
         speed: {
             display: 'range',
-            value: 0.02,
+            value: WAVE_DEFAULTS.SPEED,
             min: -1,
             max: 1,
             step: 0.1,
             listen: true
         },
-        weigth: {
+        weight: {
             display: 'range',
-            value: 0.01,
+            value: WAVE_DEFAULTS.WEIGHT,
             min: 0.1,
             max: 1,
             step: 0.01,
@@ -100,7 +100,7 @@ let settingsGUI = {
         },
         sides: {
             display: 'range',
-            value: 4,
+            value: WAVE_DEFAULTS.SIDES,
             min: 3,
             max: 10,
             step: 1,
@@ -109,18 +109,18 @@ let settingsGUI = {
     },
     rotation: {
         rotate: {
-            value: true,
+            value: ROTATION_DEFAULTS.ENABLED,
             listen: true
         },
         animation: {
             display: 'selector',
-            value: 'sin',
-            choices: ['linear', 'sin', 'cos', 'abs', 'ease'],
+            value: ROTATION_DEFAULTS.ANIMATION,
+            choices: [ANIMATION_FUNCTIONS.LINEAR, ANIMATION_FUNCTIONS.SIN, ANIMATION_FUNCTIONS.COS, ANIMATION_FUNCTIONS.ABS, ANIMATION_FUNCTIONS.EASE],
             listen: true
         },
         rotationSpeed: {
             display: 'range',
-            value: 0.3,
+            value: ROTATION_DEFAULTS.SPEED,
             min: -1,
             max: 1,
             step: 0.1,

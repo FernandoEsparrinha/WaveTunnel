@@ -1,4 +1,4 @@
-p5.disableFriendlyErrors = true;
+p5.disableFriendlyErrors = true
 
 function preload() {
   // song = loadSound('assets/SocialConstruct.mp3')
@@ -13,6 +13,7 @@ function setup() {
   console.groupEnd()
 
   createCanvas(windowWidth, windowHeight)
+  
   if (!isMobileDevice()) {
     // createCanvas(1080, 1080)
     // createCanvas(1920, 1080)
@@ -22,19 +23,28 @@ function setup() {
 
     // Command to transform every frame captured by CCapture into an mp4 video
     // ffmpeg -r 30 -f image2 -s 1080x1920 -i "%07d.jpg" -vcodec libx264 -crf 17 -pix_fmt yuv420p output.mp4
-    capturer = new CCapture({ format: 'jpg', framerate: 30, name: 'Wavetunnel-' + Date.now(), verbose: false })
+    
+    capturer = new CCapture({
+      format: RECORDING_CONFIG.FORMAT,
+      framerate: RECORDING_CONFIG.FRAMERATE,
+      name: RECORDING_CONFIG.NAME_PREFIX + Date.now(),
+      verbose: false
+    })
   }
 
   if (isSoundActive) {
     setupSound()
   }
+  
   if (isGuiActive) {
     setupGUI()
   }
+  
   if (isWebMidiActive) {
     //setupWebMidi()
     WebMidiController()
   }
+  
   if (isOscActive) {
     setupOsc()
   }
@@ -46,10 +56,8 @@ function setup() {
   //   rangeValues = getItem('variables')
   // }
 
-  // activeWave = new LineWave()
-  // TODO : Create WaveController in order to manage wave
-  activeWave = activeWave()
-  // activeWave = new TextWave()
+  // Initialize active wave
+  activeWave = WaveController.createWave()
 }
 
 function draw() {

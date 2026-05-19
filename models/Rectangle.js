@@ -31,7 +31,7 @@ class Rectangle extends Form {
             rotate(this.lifespan * this.rotationSpeed);
             // rotate(this.lifespan * (globalSettings.rotation.rotationSpeed / 200));
         }
-        strokeWeight(this.weigth);
+        strokeWeight(this.weight);
         rect(0, 0, windowWidth / 20, windowHeight / 20);
         pop();
     }
