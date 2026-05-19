@@ -8,7 +8,7 @@ class TextWave extends Wave {
   }
 
   addWaves(amount) {
-    if (this.waves.length < 300) {
+    if (this.waves.length < WAVE_CONFIG.MAX_WAVES_ACTIVE) {
       for (let i = 0; i < amount; i++) {
         this.waves.push(new TextForm(this.speed));
       }
@@ -24,16 +24,12 @@ class TextWave extends Wave {
   }
 
   display() {
-
     for (let i = 0; i < this.waves.length; i++) {
       if (!this.individualMode) {
         this.waves[i].refreshSpeed(this.speed);
       }
 
-
-      if (this.waves.length == 300) {
-        this.removeWaves(1);
-      }
+      this.enforceMaxWaves();
 
       this.waves[i].move();
       this.waves[i].display();

@@ -17,7 +17,7 @@ class TextForm extends Form {
         }
 
         scale(this.scaleValue);
-        strokeWeight(this.weigth);
+        strokeWeight(this.weight);
         textAlign(CENTER, CENTER);
         text("Hello world !", 0, 0);
         pop();
