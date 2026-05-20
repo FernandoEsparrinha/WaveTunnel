@@ -25,7 +25,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 - 
 
-## [1.4.0] - 2026-05-20
+## [1.5.0] - 2026-05-20
+- Speed is now smoother, it ranges from -100 to 100 instead of -1 to 1, giving more precise control of the wave
+- All settings are now wrapped up into a wavetunnel tab
+- linear and ease ampliation functions now have a max value where they loop
+
+## [1.4.0] - 2026-05-17
 
 ### Added
 - Initial release of WaveTunnel
