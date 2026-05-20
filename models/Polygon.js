@@ -1,7 +1,7 @@
 class Polygon extends Form {
     constructor(initialSpeed, option = {}) {
         super(initialSpeed, option)
-        this.numberOfSides = globalSettings.wave.sides
+        this.numberOfSides = globalSettings.wavetunnel.wave.sides
     }
 
     display() {

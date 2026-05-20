@@ -10,28 +10,25 @@ class Form {
         }
 
         this.scaleValue = 0
-        this.scaleIteration = 0.0
-
+        this.scaleIteration = 0.000
+        this.scaleMax = 100
         this.rotationValue = 0
         this.rotationIteration = 0.0
 
 
         this.speed = initialSpeed
-        this.rotationSpeed = globalSettings.rotation.rotationSpeed / 40
+        this.rotationSpeed = globalSettings.wavetunnel.rotation.rotationSpeed / 40
         this.lifespan = 0
 
 
-        this.colorMode = globalSettings.colorMode
+        this.colorMode = globalSettings.wavetunnel.colorMode
         this.grayTone = random(255)
-        this.randomColor = color(random(255), 100, 100)
+        this.randomColor = color(random(255), random(100), random(100))
 
-        this.weight = globalSettings.wave.weight
+        this.weight = globalSettings.wavetunnel.wave.weight
 
-        this.minVariableX = rangeValues.minVariableX
-        this.maxVariableX = rangeValues.maxVariableX
-
-        changeAmpliation(globalSettings.wave.animation)
-        changeRotation(globalSettings.rotation.animation)
+        changeAmpliation(globalSettings.wavetunnel.wave.animation)
+        changeRotation(globalSettings.wavetunnel.rotation.animation)
     }
 
     refreshSpeed(speed) {
@@ -43,8 +40,8 @@ class Form {
 
         activeAmpliation(this)
         activeRotation(this)
-        this.scaleIteration += this.speed / 10
-        this.rotationIteration += this.rotationSpeed / 10
+        this.scaleIteration += this.speed / 100
+        this.rotationIteration += this.rotationSpeed / 100
     }
 
     display() {

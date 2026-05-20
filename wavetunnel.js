@@ -63,20 +63,20 @@ function setup() {
 function draw() {
   if (focused) {
     colorMode(HSB)
-    background(globalSettings.background.hue, globalSettings.background.saturation, globalSettings.background.value)
+    background(globalSettings.wavetunnel.background.hue, globalSettings.wavetunnel.background.saturation, globalSettings.wavetunnel.background.value)
 
     if (isSoundActive) {
       drawSound()
     }
 
-    globalSettings.settings.fps = frameRate().toFixed(2)
-    globalSettings.settings.numberOfWaves = activeWave.waves.length
+    globalSettings.wavetunnel.settings.fps = frameRate().toFixed(2)
+    globalSettings.wavetunnel.settings.numberOfWaves = activeWave.waves.length
 
-    if (globalSettings.settings.autoMode) {
-      activeWave.addWaves(1, { rotate: globalSettings.rotation.rotate })
+    if (globalSettings.wavetunnel.settings.autoMode) {
+      activeWave.addWaves(1, { rotate: globalSettings.wavetunnel.rotation.rotate })
     }
 
-    activeWave.speed = globalSettings.wave.speed / 4
+    activeWave.speed = globalSettings.wavetunnel.wave.speed / 4
     activeWave.display()
 
     if (isMobileDevice()) {
@@ -92,5 +92,5 @@ function draw() {
 }
 
 function drawMobile() {
-  activeWave.addWaves(1, { rotate: globalSettings.rotation.rotate })
+  activeWave.addWaves(1, { rotate: globalSettings.wavetunnel.rotation.rotate })
 }

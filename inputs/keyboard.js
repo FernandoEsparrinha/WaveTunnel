@@ -1,19 +1,19 @@
 function keyTyped() {
 
   if (keyCode === 49) {
-    globalSettings.colorMode = 'two-tone';
+    globalSettings.wavetunnel.colorMode = 'two-tone';
   }
   if (keyCode === 50) {
-    globalSettings.colorMode = 'white';
+    globalSettings.wavetunnel.colorMode = 'white';
   }
   if (keyCode === 51) {
-    globalSettings.colorMode = 'random';
+    globalSettings.wavetunnel.colorMode = 'random';
   }
   if (keyCode === 52) {
-    globalSettings.colorMode = 'black-white';
+    globalSettings.wavetunnel.colorMode = 'black-white';
   }
   if (keyCode === 53) {
-    globalSettings.colorMode = 'rainbow';
+    globalSettings.wavetunnel.colorMode = 'rainbow';
   }
   if (keyCode === 192) {
     song.play();
@@ -41,15 +41,15 @@ function keyTyped() {
 
 function keyboardWaveControl() {
   if (keyIsDown(UP_ARROW)) {
-    activeWave.addWaves(1, { rotate: globalSettings.rotation.rotate });
+    activeWave.addWaves(1, { rotate: globalSettings.wavetunnel.rotation.rotate });
   }
   if (keyIsDown(DOWN_ARROW)) {
     activeWave.removeWaves(1);
   }
   if (keyIsDown(LEFT_ARROW)) {
-    globalSettings.wave.speed -= 0.01;
+    globalSettings.wavetunnel.wave.speed -= 0.1;
   }
   if (keyIsDown(RIGHT_ARROW)) {
-    globalSettings.wave.speed += 0.01;
+    globalSettings.wavetunnel.wave.speed += 0.1;
   }
 }

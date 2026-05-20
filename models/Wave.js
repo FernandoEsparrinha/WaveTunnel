@@ -43,7 +43,7 @@ class Wave {
   enforceMaxWaves() {
     if (this.waves.length > WAVE_CONFIG.MAX_WAVES_ACTIVE) {
       this.removeWaves(1)
-      globalSettings.settings.autoMode = false
+      globalSettings.wavetunnel.settings.autoMode = false
     }
   }
 
